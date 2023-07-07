@@ -1,0 +1,49 @@
+.sidebar {
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: space-between;
+	position: relative;
+	width: 0;
+	background-color: white;
+	background-color: rgb(240, 240, 240);
+	box-shadow: 0px 15px 30px 5px rgba(0, 0, 0, 0.05);
+	left: -25rem;
+	transition: all 0.3s ease-out;
+
+	z-index: 99;
+}
+
+.sidebar.active {
+	left: 0rem;
+	width: 25rem;
+}
+
+.sidebar .nav {
+	margin-top: 2.5rem;
+}
+
+.ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	font-size: 1.8rem;
+}
+
+.li {
+	display: flex;
+}
+
+.icon {
+	cursor: pointer;
+	fill: rgb(20, 20, 20);
+	margin-left: 1rem;
+	position: absolute;
+	bottom: 0;
+	right: -29.5rem;
+	transition: all 0.3s ease-out;
+	rotate: 180deg;
+}
+.active .icon {
+	right: 1rem;
+	rotate: 0deg;
+}

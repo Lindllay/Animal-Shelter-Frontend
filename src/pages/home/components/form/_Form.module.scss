@@ -1,0 +1,56 @@
+@import "../../../../utils/mixins";
+
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 35rem;
+}
+
+.form-text {
+	line-height: 1.1;
+	span {
+		font-size: 2rem;
+	}
+	h1 {
+		font-size: 8rem;
+		background-image: var(--main-gradient);
+		background-size: 100%;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+	}
+}
+
+.form {
+	display: grid;
+	align-items: center;
+	margin-top: 5rem;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0 5rem;
+}
+.radio-btn {
+	margin-bottom: 2rem;
+}
+.submit-btn {
+	grid-column: span 2;
+	@include main-gradient(var(--main-gradient));
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	align-self: flex-start;
+	height: 4.5rem;
+	margin-top: 3.5rem;
+}
+
+.background-container {
+	position: absolute;
+	z-index: -1;
+	top: -8rem;
+
+	.background {
+		width: 50rem;
+	}
+}

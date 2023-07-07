@@ -1,0 +1,33 @@
+.wrapper {
+	padding: var(--padding-page-inline);
+	min-height: 100vh;
+}
+
+.list {
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	// width: 100%;
+	// grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	grid-template-columns: repeat(auto-fit, 35rem);
+	grid-auto-rows: 50rem;
+	gap: 5rem;
+}
+
+.h1 {
+	font-size: 2.8rem;
+	font-weight: 400;
+	color: rgb(80, 80, 80);
+	text-align: center;
+	margin-bottom: 4.5rem;
+}
+
+.wrapper .spinner {
+	border-top: 3px solid #6e2c00; /* Blue */
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+
+	position: relative;
+	translate: 0em;
+}

@@ -1,0 +1,20 @@
+.sidebar-btn {
+	padding: 1.5rem 2.5rem;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: start;
+
+	text-decoration: none;
+	color: black;
+	font-weight: 300;
+	transition: all 0.15s ease-in-out;
+
+	&:hover {
+		background-color: var(--color-brown-200);
+	}
+}
+.active {
+	background-color: var(--color-brown-200);
+}

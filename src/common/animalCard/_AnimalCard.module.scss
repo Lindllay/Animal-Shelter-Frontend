@@ -1,0 +1,59 @@
+.li {
+	list-style: none;
+	width: 100%;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	max-width: 40rem;
+
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+
+	overflow: hidden;
+	border-radius: 2.5rem;
+
+	cursor: pointer;
+	list-style-type: none;
+}
+.image-wrapper {
+	overflow: hidden;
+	width: 100%;
+	flex: 2;
+
+	.image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: all 0.2s;
+	}
+}
+.card:hover .image {
+	scale: 1.1;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	p {
+		font-size: 1.4rem;
+		color: black;
+	}
+
+	.name span {
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: var(--color-brown-400);
+	}
+}

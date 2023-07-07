@@ -1,0 +1,14 @@
+.wrapper {
+	display: flex;
+	min-height: 100vh;
+}
+
+.spinner {
+	position: relative;
+	height: 100px;
+	width: 100px;
+	margin: auto;
+	border-top: 3px solid #a3a3a3; /* Blue */
+
+	// background-color: red;
+}

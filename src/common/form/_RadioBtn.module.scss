@@ -1,0 +1,42 @@
+@import "../../utils/mixins.scss";
+
+.form-row {
+	label {
+		@include main-gradient(white);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+
+		height: 4.5rem;
+		width: 100%;
+
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+
+		svg {
+			width: 2.6rem;
+			height: 3rem;
+			stroke: var(--color-brown-200);
+			fill: var(--color-brown-200);
+		}
+	}
+	input {
+		display: none;
+	}
+}
+
+.form-row {
+	input:checked + label {
+		@include main-gradient(var(--main-gradient));
+		border: 1px solid var(--color-brown-200);
+		color: white;
+
+		svg {
+			stroke: white;
+			fill: white;
+		}
+	}
+}

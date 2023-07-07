@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+:root {
+	// TYPOGRAPHY
+
+	// COLORS
+	--color-brown-200: #bb917c;
+	--color-brown-300: #784126;
+	--color-brown-400: #834729;
+	--color-brown-600: #5a2306;
+	--color-nav-link-1: #000;
+	--color-white: #fff;
+
+	// GRADIENTS
+	--main-gradient: linear-gradient(
+		var(--color-brown-300),
+		var(--color-brown-600)
+	);
+	--main-gradient-hover: linear-gradient(
+		var(--color-brown-600),
+		var(--color-brown-300)
+	);
+
+	// PADDINGS
+	--padding-page-inline: 9.6rem;
+
+	// MARGINS
+	--margin-page-inline: 9.6rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "Roboto", sans-serif;
+	font-size: 62.5%;
+}

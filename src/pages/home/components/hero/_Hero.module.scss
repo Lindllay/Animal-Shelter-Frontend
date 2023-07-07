@@ -1,0 +1,15 @@
+.hero {
+	padding-inline: var(--padding-page-inline);
+	padding-block: 12.5rem;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 6.4rem;
+}
+
+.img-container {
+	.image {
+		width: 100%;
+		max-width: 65rem;
+	}
+}
