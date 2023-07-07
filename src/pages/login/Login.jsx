@@ -55,8 +55,10 @@ const Login = () => {
 	useEffect(() => {
 		if (localStorage.getItem("token")) {
 			setIsLoggedIn(true);
+		} else {
+			setIsLoggedIn(false);
 		}
-	});
+	}, [isAuthenticated]);
 
 	return (
 		<div className={styles["wrapper"]}>
