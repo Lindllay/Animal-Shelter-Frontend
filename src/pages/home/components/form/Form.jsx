@@ -1,5 +1,5 @@
 import styles from "./_Form.module.scss";
-// import paw from "../../../../assets/images/paw.png";
+import paw from "../../../../assets/images/paw.png";
 import { DogIcon, CatIcon } from "../../../../assets/icons";
 import {
 	RadioBtn,
@@ -120,7 +120,7 @@ const Form = () => {
 				<button className={styles["submit-btn"]}>Szukaj</button>
 			</form>
 			<picture className={styles["background-container"]}>
-				{/* <img src={paw} alt="" className={styles.background} /> */}
+				<img src={paw} alt="" className={styles.background} />
 			</picture>
 		</div>
 	);
