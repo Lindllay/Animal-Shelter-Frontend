@@ -11,6 +11,7 @@ const Login = () => {
 	const [values, setValues] = useState({ email: "", password: "" });
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	const { isAuthenticated, login, logout } = useContext(AuthContext);
 
@@ -51,10 +52,16 @@ const Login = () => {
 		[values]
 	);
 
+	useEffect(() => {
+		if (localStorage.getItem("token")) {
+			setIsLoggedIn(true);
+		}
+	});
+
 	return (
 		<div className={styles["wrapper"]}>
 			<h1 className={styles["heading-1"]}>Witaj</h1>
-			{!isAuthenticated && (
+			{!isLoggedIn && (
 				<>
 					<p className={styles.paragraph}>
 						Aby przejść do panelu administracyjnego, wprowadź odpowiednie dane:
@@ -88,7 +95,7 @@ const Login = () => {
 					</form>
 				</>
 			)}
-			{isAuthenticated && (
+			{isLoggedIn && (
 				<>
 					<p className={styles.paragraph}>Zalogowano jako Konto Testowe</p>
 					<div className={styles["btn-wrapper"]}>

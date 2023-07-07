@@ -4,8 +4,6 @@ import ArrowIcon from "../../../../assets/icons/ArrowIcon";
 import { useContext, useState } from "react";
 import AuthContext from "../../../../context/authContext";
 
-import { url } from "../../../../utils/config";
-
 const Sidebar = () => {
 	const [isActive, setIsActive] = useState(true);
 
@@ -36,7 +34,7 @@ const Sidebar = () => {
 						<SidebarBtn to="settings ">Ustawienia konta</SidebarBtn>
 					</li>
 					<li className={styles.li}>
-						<SidebarBtn to={`${url}login`} onClick={logoutHandler}>
+						<SidebarBtn to={"/login"} onClick={logoutHandler}>
 							Wyloguj
 						</SidebarBtn>
 					</li>
