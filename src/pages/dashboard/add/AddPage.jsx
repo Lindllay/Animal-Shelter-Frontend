@@ -6,9 +6,9 @@ import axios from "axios";
 import validationSchema from "../../../lib/formik/ValidationSchema";
 import { useState } from "react";
 import { Select } from "../../../common/form";
+import { url } from "../../../utils/config";
 
 let formDataImage;
-const url = "http://127.0.0.1:5173/";
 
 const AddPage = () => {
 	const initialValues = {
