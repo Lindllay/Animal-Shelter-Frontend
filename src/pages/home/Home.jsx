@@ -1,11 +1,15 @@
 import styles from "./_Home.module.scss";
 import Hero from "./components/hero/Hero";
+import Tax from "./components/tax/Tax";
+import RecentlyAdopted from "./components/recentlyAdopted/RecentlyAdopted";
 
 const Home = (props) => {
 	return (
-		<div className={styles.home}>
+		<section className={styles.home}>
 			<Hero />
-		</div>
+			<Tax />
+			<RecentlyAdopted />
+		</section>
 	);
 };
 

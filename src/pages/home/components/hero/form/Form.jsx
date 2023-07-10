@@ -1,14 +1,14 @@
 import styles from "./_Form.module.scss";
-import paw from "../../../../assets/images/paw.png";
-import { DogIcon, CatIcon } from "../../../../assets/icons";
+import paw from "../../../../../assets/images/paw.png";
+import { DogIcon, CatIcon } from "../../../../../assets/icons";
 import {
 	RadioBtn,
 	RadioContainer,
 	Select,
 	RadioOption,
-} from "../../../../common/form/";
+} from "../../../../../common/form/";
 import { useContext } from "react";
-import FiltersContext from "../../../../context/filtersContext";
+import FiltersContext from "../../../../../context/filtersContext";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {

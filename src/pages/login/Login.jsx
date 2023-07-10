@@ -13,13 +13,18 @@ const Login = () => {
 	const [error, setError] = useState("");
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-	const { isAuthenticated, login, logout } = useContext(AuthContext);
+	const { login } = useContext(AuthContext);
 
 	const navigate = useNavigate();
 
 	const handleChange = (e) => {
 		setError("");
 		setValues({ ...values, [e.target.name]: e.target.value });
+	};
+
+	const logout = () => {
+		setIsLoggedIn(false);
+		localStorage.removeItem("token");
 	};
 
 	const navigateDashboard = () => {
@@ -58,7 +63,7 @@ const Login = () => {
 		} else {
 			setIsLoggedIn(false);
 		}
-	}, [isAuthenticated]);
+	}, []);
 
 	return (
 		<div className={styles["wrapper"]}>
