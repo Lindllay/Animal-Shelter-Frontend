@@ -96,7 +96,7 @@ const Login = () => {
 							className={styles.btn}
 							onClick={submitHandler}
 						>
-							{isLoading && <LoadingSpinner />}
+							{isLoading && <LoadingSpinner className={styles.spinner} />}
 							Zaloguj
 						</button>
 					</form>

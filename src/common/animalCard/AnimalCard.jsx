@@ -6,7 +6,7 @@ const AnimalCard = (props) => {
 
 	return (
 		<li className={styles.li}>
-			<Link className={styles.card} to={id}>
+			<Link className={styles.card} to={props.to}>
 				<div className={styles["image-wrapper"]}>
 					<img src={image} className={styles.image}></img>
 				</div>

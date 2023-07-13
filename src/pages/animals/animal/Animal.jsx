@@ -1,44 +1,32 @@
 import { useParams } from "react-router-dom";
 import styles from "./_Animal.module.scss";
-import { useState, useCallback, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import { url } from "../../../utils/config";
+import useHttp from "../../../hooks/useHttp";
+import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 
-const Animal = (props) => {
-	const { id } = useParams();
-	const [isLoading, setIsLoading] = useState(true);
-
+const Animal = () => {
 	const [data, setData] = useState(null);
+	const { sendRequest, isLoading } = useHttp();
 
-	// id: animal._id,
-	// 				age: animal.age,
-	// 				breed: animal.breed,
-	// 				createdAt: animal.createdAt,
-	// 				description: animal.description,
-	// 				gender: animal.gender,
-	// 				image: animal.image,
-	// 				name: animal.name,
-	// 				species: animal.species,
-	// 				weight: animal.weight,
-	//        adoptedAt: animal.adoptedAt
+	// const isLoading = true;
 
-	const fetchAnimalHandler = useCallback(async () => {
-		try {
-			const { data } = await axios.get(`${url}api/v1/animals/${id}`);
+	const { id } = useParams();
 
-			setData(data[0]);
-			setIsLoading(false);
-		} catch (error) {
-			console.log(error);
-			setIsLoading(false);
-		}
-	}, []);
+	const transformData = (data) => {
+		setData(data);
+	};
 
 	useEffect(() => {
-		fetchAnimalHandler();
+		sendRequest({ url: `${url}api/v1/animals/${id}` }, transformData);
 	}, []);
 
-	if (isLoading) return <h1>Ładowanie</h1>;
+	if (isLoading)
+		return (
+			<h1>
+				<LoadingSpinner className={styles.spinner} />
+			</h1>
+		);
 
 	if (!isLoading && data)
 		return (

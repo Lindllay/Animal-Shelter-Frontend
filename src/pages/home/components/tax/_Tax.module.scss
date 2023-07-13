@@ -12,11 +12,13 @@
 	background-blend-mode: soft-light;
 
 	background-size: cover;
+	background-position: center;
 }
 
 .content {
 	text-align: center;
 	color: white;
+	text-shadow: 0 0 15px rgba(0, 0, 0, 0.65);
 
 	letter-spacing: 1.5px;
 }

@@ -1,0 +1,21 @@
+.wrapper {
+	margin-block: 18rem;
+}
+
+.header {
+	font-size: 4.8rem;
+	font-weight: 400;
+	color: rgb(80, 80, 80);
+	text-align: center;
+	margin-bottom: 7.5rem;
+}
+
+.list {
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+
+	grid-template-columns: repeat(auto-fit, 35rem);
+	grid-auto-rows: 50rem;
+	gap: 5rem;
+}

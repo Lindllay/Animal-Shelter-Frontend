@@ -45,3 +45,14 @@
 		}
 	}
 }
+
+.spinner {
+	border-top: 3px solid #6e2c00; /* Blue */
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}

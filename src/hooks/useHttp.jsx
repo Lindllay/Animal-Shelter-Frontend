@@ -1,22 +1,31 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import axios from "axios";
 
-const url = "http://127.0.0.1:5173/";
-
-const useHttp = (requestConfig, applyData) => {
+const useHttp = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	const sendRequest = async (applyData) => {
+	const sendRequest = useCallback(async (requestConfig, applyData) => {
 		setIsLoading(true), setError(null);
 
 		try {
-			const response = await axios.get(requestConfig.url, {
-				filters: requestConfig.filters,
-			});
-			console.log(response);
+			const response = await axios.get(
+				requestConfig.url,
+				requestConfig.payload
+					? {
+							...requestConfig.payload,
+					  }
+					: ""
+			);
+
+			if (response.statusText !== "OK") throw new Error("Request Failed");
+
+			const data = response.data;
+
+			applyData(data);
 		} catch (error) {}
-	};
+		setIsLoading(false);
+	});
 
 	return { isLoading, error, sendRequest };
 };

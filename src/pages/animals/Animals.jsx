@@ -6,49 +6,40 @@ import AnimalCard from "../../common/animalCard/AnimalCard";
 import Filter from "../../common/filter/Filter";
 import LoadingSpinner from "../../common/UI/LoadingSpinner";
 import { url } from "../../utils/config";
-import { Routes, Route } from "react-router-dom";
+import useHttp from "../../hooks/useHttp";
 
 const Animals = (props) => {
 	const filtersCtx = useContext(FiltersContext);
+	const { filters } = filtersCtx;
+
+	const { isLoading, sendRequest } = useHttp();
 
 	const [data, setData] = useState([]);
-	const { filters } = filtersCtx;
-	const [isLoading, setIsLoading] = useState(false);
 
-	const fetchAnimalsHandler = useCallback(async () => {
-		try {
-			setIsLoading(true);
-			const { data } = await axios.get(`${url}api/v1/animals`, {
-				params: filters,
-			});
+	const fetchAnimalsHandler = () => {
+		sendRequest(
+			{
+				url: `${url}api/v1/animals`,
+				payload: { params: filters },
+			},
+			transformData
+		);
+	};
 
-			const transformedData = data.animals.map((animal) => {
-				return {
-					id: animal._id,
-					age: animal.age,
-					breed: animal.breed,
-					createdAt: animal.createdAt,
-					description: animal.description,
-					gender: animal.gender,
-					image: animal.image,
-					name: animal.name,
-					species: animal.species,
-					weight: animal.weight,
-				};
-			});
-			setData(transformedData);
-			setIsLoading(false);
-		} catch (error) {
-			console.log(error);
-		}
-	}, [filters]);
+	const transformData = (data) => {
+		const transformedData = data.animals.map((animal) => {
+			return { ...animal, id: animal._id };
+		});
+
+		setData(transformedData);
+	};
 
 	useEffect(() => {
 		fetchAnimalsHandler();
 	}, []);
 
 	const animals = data.map((animalData) => (
-		<AnimalCard data={animalData} key={animalData.id} />
+		<AnimalCard data={animalData} key={animalData.id} to={animalData.id} />
 	));
 
 	const results = (value) => {

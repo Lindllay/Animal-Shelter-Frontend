@@ -1,36 +1,45 @@
 import styles from "./_RecentylyAdopted.module.scss";
 
-import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import useHttp from "../../../../hooks/useHttp";
 import { url } from "../../../../utils/config";
 
+import AnimalCard from "../../../../common/animalCard/AnimalCard";
+
 const RecentlyAdopted = () => {
-	const [data, setData] = useState(null);
-	const [isLoading, setIsLoading] = useState(false);
+	const { isLoading, error, sendRequest } = useHttp();
 
-	const fetchAnimalsHandler = useCallback(async () => {
-		try {
-			setIsLoading(true);
-			const { data } = await axios.get(`${url}api/v1/animals`, {
-				params: "adoptedAt",
-			});
+	const [data, setData] = useState([]);
 
-			console.log(data);
-			setIsLoading(false);
-		} catch (error) {
-			setIsLoading(false);
-			console.log(error);
-		}
-	}, []);
+	const transformData = (data) => {
+		const transformedData = data.animals.map((animal) => {
+			return { ...animal, id: animal._id };
+		});
+		setData(transformedData);
+	};
 
 	useEffect(() => {
-		fetchAnimalsHandler();
-	});
+		sendRequest(
+			{
+				url: `${url}api/v1/animals`,
+				payload: { params: { sort: "-adoptedAt", limit: 3 } },
+			},
+			transformData
+		);
+	}, []);
+
+	const animals = data.map((animalData) => (
+		<AnimalCard
+			data={animalData}
+			key={animalData.id}
+			to={`animals/${animalData.id}`}
+		/>
+	));
 
 	return (
-		<section>
+		<section className={styles.wrapper}>
 			<h2 className={styles.header}>Ostatnio przyjęte</h2>
-			<div className={styles.content}></div>
+			<ul className={styles.list}>{animals}</ul>
 		</section>
 	);
 };
