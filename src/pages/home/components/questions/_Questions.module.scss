@@ -1,0 +1,40 @@
+.wrapper {
+	display: flex;
+	padding-inline: var(--padding-page-inline);
+}
+.text {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.h2 {
+	font-size: 6rem;
+	line-height: 6rem;
+	margin-bottom: 1.6rem;
+}
+.h3 {
+	font-size: 2.4rem;
+	margin-bottom: 4.8rem;
+}
+.button {
+	align-self: flex-start;
+
+	background: var(--main-gradient);
+	border: none;
+	border-radius: 10em;
+	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	padding: 1.5rem 4.5rem;
+	color: var(--color-white);
+	text-transform: uppercase;
+	font-weight: 600;
+	// transition: all 0.15s cubic-bezier(0, -0.59, 0.41, 2.4);
+}
+.picture {
+	flex: 1.2;
+
+	img {
+		max-height: 60rem;
+	}
+}
