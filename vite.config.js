@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
 import react from "@vitejs/plugin-react";
 
 import path from "node:path";
@@ -8,4 +7,5 @@ import path from "node:path";
 export default defineConfig({
 	root: path.join(__dirname),
 	plugins: [react()],
+	assetsInclude: "**/*.JPG",
 });

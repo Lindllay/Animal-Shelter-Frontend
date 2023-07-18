@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import FiltersContext from "../../context/filtersContext";
 import styles from "./_Animals.module.scss";
-import axios from "axios";
 import AnimalCard from "../../common/animalCard/AnimalCard";
 import Filter from "../../common/filter/Filter";
 import LoadingSpinner from "../../common/UI/LoadingSpinner";
