@@ -3,6 +3,7 @@ import catImage from "../../../../assets/images/cat-questions.png";
 import questionMark from "../../../../assets/images/question-mark-cat.jpg";
 
 const Questions = () => {
+  console.log("123");
   return (
     <section className={styles.wrapper}>
       <div className={styles.text}>
