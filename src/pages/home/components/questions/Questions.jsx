@@ -1,6 +1,6 @@
 import styles from "./_Questions.module.scss";
 import catImage from "../../../../assets/images/cat-questions.png";
-import questionMark from "../../../../assets/question-mark-cat.jpg";
+import questionMark from "../../../../assets/images/question-mark-cat.jpg";
 
 const Questions = () => {
   return (
