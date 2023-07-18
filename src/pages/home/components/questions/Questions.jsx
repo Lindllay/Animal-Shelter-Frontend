@@ -1,6 +1,7 @@
 import styles from "./_Questions.module.scss";
 import catImage from "../../../../assets/images/cat-questions.png";
-import questionMark from "../../../../assets/images/cat-questions.png";
+// import questionMark from "../../../../assets/images/cat-questions.png";
+import test from "../../../../assets/images/test.png";
 
 const Questions = () => {
   return (
@@ -9,7 +10,7 @@ const Questions = () => {
         <h2 className={styles.h2}>
           Masz pytania
           <picture>
-            <img src={questionMark} alt="question mark" />
+            <img src={test} alt="question mark" />
           </picture>
         </h2>
 
