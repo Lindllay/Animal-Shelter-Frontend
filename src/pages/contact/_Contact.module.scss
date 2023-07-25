@@ -1,0 +1,47 @@
+.section {
+  padding-inline: var(--padding-page-inline);
+  padding-block: 3.2rem;
+}
+.h1 {
+  font-size: 4.8rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  color: var(--color-brown-600);
+}
+
+.h2 {
+  font-size: 2rem;
+  color: var(--color-brown-600);
+  margin-bottom: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.contact {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  padding-right: 2rem;
+
+  div {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
+
+.map {
+  flex: 2;
+
+  height: 100vh;
+  max-height: 100%;
+  width: 30rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}

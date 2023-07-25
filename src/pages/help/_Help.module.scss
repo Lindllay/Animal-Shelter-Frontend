@@ -1,0 +1,53 @@
+.section {
+  padding-inline: var(--padding-page-inline);
+  padding-block: 3.2rem;
+}
+
+.h1 {
+  font-size: 3.8rem;
+  color: var(--color-brown-600);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.article {
+  display: flex;
+  gap: 3.2rem;
+  margin-top: 3.2rem;
+  margin-bottom: 6.4rem;
+
+  div {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.h2 {
+  color: var(--color-brown-600);
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.paragraph {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+}
+
+.picture {
+  flex: 1;
+  img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+}
+
+.article:nth-child(odd) {
+  div {
+    order: 2;
+  }
+  .picture {
+    order: 1;
+  }
+}

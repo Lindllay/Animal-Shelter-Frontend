@@ -2,7 +2,7 @@
   display: flex;
   padding-inline: var(--padding-page-inline);
   max-width: var(--max-width);
-  margin: 12.6rem auto;
+  margin: 9.6rem auto;
 }
 .text {
   flex: 1;
@@ -15,6 +15,7 @@
   font-size: 6.4rem;
   line-height: 7rem;
   margin-bottom: 1.8rem;
+  color: rgb(50, 50, 50);
 
   position: relative;
 
@@ -29,8 +30,9 @@
 }
 
 .h3 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   margin-bottom: 5.6rem;
+  color: rgb(40, 40, 40);
 }
 .button {
   align-self: flex-start;
