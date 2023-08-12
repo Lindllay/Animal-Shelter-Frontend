@@ -2,7 +2,9 @@
   display: flex;
   padding-inline: var(--padding-page-inline);
   max-width: var(--max-width);
-  margin: 9.6rem auto;
+  margin-top: 4.8rem;
+  margin-bottom: 9.6rem;
+  margin-inline: auto;
 }
 .text {
   flex: 1;

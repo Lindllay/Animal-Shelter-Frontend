@@ -1,14 +1,14 @@
 .wrapper {
-	display: flex;
-	min-height: 100vh;
+  display: flex;
+  min-height: calc(100vh - 9.6rem);
 }
 
 .spinner {
-	position: relative;
-	height: 100px;
-	width: 100px;
-	margin: auto;
-	border-top: 3px solid #a3a3a3; /* Blue */
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-top: 3px solid #a3a3a3; /* Blue */
 
-	// background-color: red;
+  // background-color: red;
 }
