@@ -1,5 +1,4 @@
 import styles from "./_Contact.module.scss";
-import "leaflet/dist/leaflet.css";
 
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
