@@ -1,35 +1,66 @@
 .form-wrapper {
   display: flex;
   justify-content: center;
+  width: 100%;
   padding: 6.4rem;
-  margin: 0 auto;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  gap: 2rem;
-  width: 40rem;
-  z-index: 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, min-content);
+
+  gap: 3rem;
+  width: 100%;
+  z-index: 99;
+}
+
+.description {
+  grid-row: 5;
+  grid-column: 1;
+
+  input {
+    border-radius: 2rem;
+  }
+}
+
+.imageInput {
+  input {
+    padding: 0;
+  }
+}
+
+.gender,
+.species,
+.imageInput,
+.date {
+  margin-top: 1rem;
 }
 
 .btn {
-  border-radius: 25rem;
   background: var(--main-gradient);
   color: white;
   font-size: 1.6rem;
+
+  border-radius: 25rem;
   cursor: pointer;
 
   padding: 1.2rem 4.8rem;
-  width: 100%;
+  width: max(100%, 30rem);
   margin-top: 2.4rem;
 
   display: flex;
-  justify-content: center;
   gap: 1rem;
-
+  justify-content: center;
+  justify-self: start;
   position: relative;
+}
+
+.btn-disabled {
+  background: rgb(230, 230, 230);
+  color: rgb(160, 160, 160);
+  border: 1px solid rgb(173, 173, 173);
 }
 
 .spinner {

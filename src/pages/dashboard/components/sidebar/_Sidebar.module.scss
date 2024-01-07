@@ -1,28 +1,18 @@
 .sidebar {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   position: relative;
-  width: 0;
-  min-width: 0rem;
+  min-width: 25rem;
+  width: 25rem;
+  left: 0rem;
 
-  background-color: white;
   background-color: rgb(240, 240, 240);
-  box-shadow: 0px 15px 30px 5px rgba(0, 0, 0, 0.05);
-  left: -25rem;
-  transition: all 0.3s ease-out;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease-in;
 
   z-index: 99;
 }
 
-.sidebar.active {
-  left: 0rem;
-  min-width: 25rem;
-  width: 25rem;
-}
-
-.sidebar .nav {
-  margin-top: 2.5rem;
+.nav {
+  margin-top: 2rem;
 }
 
 .ul {
@@ -36,17 +26,59 @@
   display: flex;
 }
 
-.icon {
+.btn-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1.5rem;
+  fill: hsla(0, 0%, 0%, 0.75);
+
+  transition: all 0.2s;
+}
+
+.btn-icon--inner {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1.5rem;
+  fill: hsla(0, 0%, 100%, 0.9);
+}
+
+.toggle-icon {
   cursor: pointer;
   fill: rgb(20, 20, 20);
-  margin-left: 1rem;
-  position: absolute;
-  bottom: 0;
-  right: -29.5rem;
+  margin-left: 0.5rem;
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+
   transition: all 0.3s ease-out;
   rotate: 180deg;
 }
-.active .icon {
+.active .toggle-icon {
   right: 1rem;
   rotate: 0deg;
+}
+
+.sub-menu {
+  width: 0rem;
+  height: 100%;
+  top: 2rem;
+  position: absolute;
+  background-color: #30170c;
+  border-radius: 1rem;
+
+  right: 0rem;
+  transition: all 0.2s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.li:hover .sub-menu {
+  width: 19.5rem;
+  pointer-events: all;
+  visibility: unset;
 }

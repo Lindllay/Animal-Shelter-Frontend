@@ -20,6 +20,7 @@ const Animals = (props) => {
       {
         url: `${url}api/v1/animals`,
         payload: { params: filters },
+        method: "get",
       },
       transformData
     );

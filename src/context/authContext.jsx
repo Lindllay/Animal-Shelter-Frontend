@@ -2,28 +2,44 @@ import { createContext } from "react";
 import useToken from "../hooks/useToken";
 
 const AuthContext = createContext({
-	isAuthenticated: false,
-	isLoading: false,
-	verifyToken: () => {},
-	logout: () => {},
+  isAuthenticated: false,
+  isLoading: false,
+  isFetched: false,
+  setIsFetched: () => {},
+  role: null,
+  setRole: () => {},
+  verifyToken: () => {},
+  logout: () => {},
 });
 
-export const AuthContextProvider = (props) => {
-	const { isAuthenticated, isLoading, verifyToken, login, logout } = useToken();
+export const AuthContextProvider = ({ children }) => {
+  const {
+    isAuthenticated,
+    isLoading,
+    isFetched,
+    setIsFetched,
+    role,
+    setRole,
+    verifyToken,
+    login,
+    logout,
+  } = useToken();
 
-	const contextValue = {
-		isAuthenticated,
-		isLoading,
-		verifyToken,
-		login,
-		logout,
-	};
+  const contextValue = {
+    isAuthenticated,
+    isLoading,
+    isFetched,
+    setIsFetched,
+    role,
+    setRole,
+    verifyToken,
+    login,
+    logout,
+  };
 
-	return (
-		<AuthContext.Provider value={contextValue}>
-			{props.children}
-		</AuthContext.Provider>
-	);
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthContext;

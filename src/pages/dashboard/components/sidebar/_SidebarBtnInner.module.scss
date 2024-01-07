@@ -1,0 +1,20 @@
+.btn {
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+  border-radius: 1rem;
+
+  &:hover {
+    // background-color: var(--color-brown-200);
+    background: linear-gradient(to left, #46291b, #58301c);
+  }
+}

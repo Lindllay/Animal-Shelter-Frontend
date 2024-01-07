@@ -1,0 +1,164 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+  background-color: rgb(255, 241, 230);
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  gap: 2rem;
+
+  border-radius: 1rem;
+
+  grid-template-columns: 3rem 5rem repeat(5, 1fr) 5rem;
+
+  font-size: 1.6rem;
+  font-weight: 300;
+
+  height: 10rem;
+
+  &:hover:not(div.row) {
+    background-color: rgb(255, 225, 202);
+  }
+}
+
+div.row {
+  background-color: white;
+  box-shadow: unset;
+  font-weight: 600;
+  height: 7rem;
+}
+
+.number {
+  grid-column: 1;
+}
+
+.picture {
+  margin-right: 1rem;
+  img {
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+
+.title {
+  grid-column: 3 / span 2;
+  justify-self: flex-start;
+}
+
+.introduction {
+  grid-column: 5 / span 2;
+}
+
+.date {
+  grid-column: 7;
+}
+.name {
+}
+.species {
+}
+
+.info {
+  .data {
+    .label {
+    }
+
+    .value {
+    }
+  }
+}
+
+.loading-row {
+  color: black;
+  padding: 1.8rem;
+  background-color: rgb(255, 241, 230);
+
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.1);
+
+  border-radius: 1rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  height: 4rem;
+  width: 4rem;
+  border-top: 3px solid #57341b; /* Blue */
+}
+
+.controllers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      scale: 1.25;
+    }
+  }
+}
+
+.modal {
+  padding: 3.2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+
+  p {
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  button {
+    border: none;
+    border-radius: 5rem;
+    height: 4rem;
+    width: 9.6rem;
+
+    cursor: pointer;
+  }
+
+  .btn-delete {
+    background: var(--main-gradient);
+    color: white;
+
+    &:hover {
+      background: var(--main-gradient-hover);
+    }
+  }
+
+  .btn-cancel:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}

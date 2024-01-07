@@ -1,0 +1,38 @@
+footer {
+  height: 9rem;
+  background: var(--main-gradient);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+
+  position: relative;
+  z-index: 99;
+
+  clip-path: polygon(
+    50% 0%,
+    80% 4%,
+    100% 9%,
+    100% 100%,
+    80% 100%,
+    50% 100%,
+    17% 100%,
+    0 100%,
+    0 8%,
+    23% 4%
+  );
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: hsla(0, 0%, 100%, 0.5);
+    margin-top: 1rem;
+  }
+
+  .link {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+  }
+}

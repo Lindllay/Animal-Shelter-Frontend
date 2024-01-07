@@ -3,14 +3,7 @@ import articleValidationSchema from "../../../lib/formik/ArticleValidationSchema
 import { useState } from "react";
 import { useFormik } from "formik";
 import { url } from "../../../utils/config";
-import {
-  Input,
-  RadioBtn,
-  RadioContainer,
-  RadioOption,
-  Select,
-  Textarea,
-} from "../../../common/form";
+import { Input, Textarea } from "../../../common/form";
 import axios from "axios";
 
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
@@ -21,11 +14,14 @@ const AddArticle = () => {
   const initialValues = {
     title: "",
     date: Date.now(),
-    image: "",
+    imageSrc: "",
+    imageId: "",
     introduction: "",
     description: "",
     alt: "",
   };
+
+  const token = localStorage.getItem("token");
 
   const { values, errors, touched, handleChange, handleSubmit, handleReset } =
     useFormik({
@@ -36,13 +32,22 @@ const AddArticle = () => {
           setIsLoading(true);
           const { data } = await axios.post(
             `${url}api/v1/upload`,
-            formDataImage
+            formDataImage,
+            { headers: { Authorization: `Bearer ${token}` } }
           );
 
-          await axios.post(`${url}api/v1/articles`, {
-            data: { ...values, image: data.image.src },
-            image_id: data.image.public_id,
-          });
+          await axios.post(
+            `${url}api/v1/articles`,
+            {
+              data: {
+                ...values,
+                imageSrc: data.image.src,
+                imageSrcSmall: data.image.srcSmall,
+                imageId: data.image.public_id,
+              },
+            },
+            { headers: { Authorization: `Bearer ${token}` } }
+          );
           handleReset();
           setIsLoading(false);
         } catch (error) {

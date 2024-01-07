@@ -13,4 +13,5 @@ export default Yup.object().shape({
     "Opis zdjęcia nie może być dłuższy niż 125 znaków"
   ),
   image: Yup.string().required("Proszę wybrać plik"),
+  imageId: Yup.string(),
 });

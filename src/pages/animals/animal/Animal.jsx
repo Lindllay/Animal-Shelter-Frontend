@@ -4,22 +4,17 @@ import { useState, useEffect } from "react";
 import { url } from "../../../utils/config";
 import useHttp from "../../../hooks/useHttp";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
+import formatAge from "../../../utils/formatAge";
 
 const Animal = () => {
   const [data, setData] = useState(null);
   const { sendRequest, isLoading } = useHttp();
 
-  // const isLoading = true;
-
   const { id } = useParams();
 
-  const transformData = (data) => {
-    setData(data);
-  };
-
   useEffect(() => {
-    sendRequest({ url: `${url}api/v1/animals/${id}` }, transformData);
-  }, []);
+    sendRequest({ url: `${url}api/v1/animals/${id}`, method: "get" }, setData);
+  }, [id]);
 
   if (isLoading)
     return (
@@ -32,7 +27,7 @@ const Animal = () => {
     return (
       <div className={styles.wrapper}>
         <picture className={styles.picture}>
-          <img src={data.image} alt="animal photo" />
+          <img src={data.imageSrc} alt="animal photo" />
         </picture>
         <div className={styles.info}>
           <ul className={styles.ul}>
@@ -58,7 +53,9 @@ const Animal = () => {
             </li>
             <li>
               <span className={styles.label}>Wiek:</span>
-              <span className={styles.value}>{data.age} lat</span>
+              <span className={styles.value}>{`${data.age} ${formatAge(
+                data.age
+              )}`}</span>
             </li>
             <li>
               <span className={styles.label}>Waga:</span>

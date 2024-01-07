@@ -1,14 +1,14 @@
 .form-wrapper {
   width: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
+  z-index: 99999;
+
   form {
     width: 100%;
     padding: 6.4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    z-index: 0;
 
     .btn {
       border-radius: 25rem;

@@ -1,5 +1,5 @@
 import styles from "./_News.module.scss";
-import Article from "./components/Article";
+import ArticleCard from "../../common/articleCard/ArticleCard";
 import { useState, useEffect } from "react";
 import useHttp from "../../hooks/useHttp";
 import { url } from "../../utils/config";
@@ -9,7 +9,7 @@ const News = () => {
   const { isLoading, error, sendRequest } = useHttp();
 
   const fetchArticlesHandler = () => {
-    sendRequest({ url: `${url}api/v1/articles` }, transformData);
+    sendRequest({ url: `${url}api/v1/articles`, method: "get" }, transformData);
   };
 
   const transformData = (data) => {
@@ -25,7 +25,11 @@ const News = () => {
   }, []);
 
   const articles = data.map((articlesData) => (
-    <Article data={articlesData} key={articlesData.id} to={articlesData.id} />
+    <ArticleCard
+      data={articlesData}
+      key={articlesData.id}
+      to={articlesData.id}
+    />
   ));
 
   return (

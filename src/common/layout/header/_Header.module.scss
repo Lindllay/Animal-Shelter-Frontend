@@ -1,0 +1,49 @@
+.header {
+  position: relative;
+  height: 9.6rem;
+
+  padding-inline: var(--padding-page-inline);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+
+  z-index: 999;
+}
+.logo-img {
+  height: 6rem;
+}
+
+.logo-img img {
+  height: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  height: 100%;
+
+  > div {
+    translate: 0 6rem;
+    transition: all 0.2s ease-out;
+  }
+
+  > nav ul {
+    transition: all 0.2s ease-out;
+
+    translate: 0 3rem;
+  }
+}
+
+.wrapper.active {
+  overflow: hidden;
+
+  > div {
+    translate: 0 -1rem;
+  }
+
+  > nav ul {
+    translate: 0 -5rem;
+  }
+}

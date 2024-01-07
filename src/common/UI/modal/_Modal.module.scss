@@ -1,0 +1,21 @@
+.backdrop {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999999;
+}
+
+.overlay {
+  background-color: white;
+  min-height: 10rem;
+  min-width: 30vw;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 99999999;
+  border-radius: 2rem;
+}

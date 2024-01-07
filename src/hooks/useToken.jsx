@@ -3,45 +3,68 @@ import axios from "axios";
 import { url } from "../utils/config";
 
 const useToken = () => {
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
+  const [isFetched, setIsFetched] = useState(false);
+  /** isFetched allows to avoid situation that occurs when user is 
+    logging in - displaying the unauthorized component for a split second. 
+    This happens when Dashboard components are rendered only based on isAuthorized state.
+    It's because after navigating to protected source, current state of isAuthorized 
+    might be false, until verifyToken function completes its work by updating the 
+    isAuthorized state. 
+      IsFetched is true only after verifyToken has completed,
+    which allows to render Unauthorized component based on that condition .**/
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("token") ? true : false
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [role, setRole] = useState(null);
 
-	const verifyToken = async () => {
-		try {
-			setIsLoading(true);
+  const verifyToken = async () => {
+    try {
+      setIsLoading(true);
 
-			const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token");
 
-			if (!token) throw new Error("Unauthenticated");
+      if (!token) throw new Error("Unauthenticated");
 
-			await axios.get(`${url}api/v1/dashboard`, {
-				headers: { Authorization: `Bearer ${token}` },
-			});
-			setIsLoading(false);
-			setIsAuthenticated(true);
-		} catch (error) {
-			console.log(error);
-			setIsLoading(false);
-			setIsAuthenticated(false);
-		}
-	};
+      const response = await axios.get(`${url}api/v1/dashboard`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-	const login = () => {
-		setIsAuthenticated(true);
-	};
+      setRole(response.data.role);
+      setIsAuthenticated(true);
+      setIsLoading(false);
+      setIsFetched(true);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+      setIsAuthenticated(false);
+      setIsFetched(true);
+      setRole(null);
+    }
+  };
 
-	const logout = () => {
-		localStorage.removeItem("token");
-		setIsAuthenticated(false);
-	};
+  const login = () => {
+    setIsAuthenticated(true);
+  };
 
-	return {
-		isAuthenticated,
-		isLoading,
-		verifyToken,
-		login,
-		logout,
-	};
+  const logout = () => {
+    localStorage.removeItem("token");
+    setIsFetched(false);
+    setIsAuthenticated(false);
+    setRole(null);
+  };
+
+  return {
+    isAuthenticated,
+    isLoading,
+    verifyToken,
+    login,
+    logout,
+    role,
+    setRole,
+    isFetched,
+    setIsFetched,
+  };
 };
 
 export default useToken;

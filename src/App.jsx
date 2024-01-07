@@ -1,7 +1,7 @@
 import "./_App.scss";
 import { Routes, Route } from "react-router-dom";
 
-import Layout from "./common/Layout";
+import Layout from "./common/layout/Layout";
 import Home from "./pages/home/Home";
 import Animals from "./pages/animals/Animals";
 import Animal from "./pages/animals/animal/Animal";
@@ -11,22 +11,25 @@ import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import About from "./pages/about/About";
 import News from "./pages/news/News";
+import Article from "./pages/news/article/Article";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/news" element={<News />}></Route>
-        <Route path="/animals" element={<Animals />}></Route>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {/* Public routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<Article />} />
+        <Route path="/animals" element={<Animals />} />
         <Route path="/animals/:id" element={<Animal />} />
         <Route path="/help" element={<Help />} />
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/dashboard/*" element={<Dashboard />}></Route>
-      </Routes>
-    </Layout>
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+      </Route>
+    </Routes>
   );
 }
 

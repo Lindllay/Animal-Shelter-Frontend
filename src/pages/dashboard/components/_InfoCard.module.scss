@@ -1,0 +1,50 @@
+.card {
+  width: 5rem;
+  height: 5rem;
+  background: var(--main-gradient);
+  position: absolute;
+  right: 0rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 0rem 1rem;
+  transition: all 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999999;
+
+  &:hover {
+    width: 30rem;
+    height: 6.5rem;
+
+    justify-content: left;
+  }
+  &:hover .info {
+    opacity: 1;
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+  }
+}
+
+.icon {
+  color: white;
+  opacity: 1;
+  margin: 0 1rem;
+  animation: 1s ease-in 1s infinite alternate pulsate;
+}
+
+.info {
+  position: absolute;
+  left: 4.7rem;
+  font-size: 1.4rem;
+  color: white;
+  opacity: 0;
+}
+
+@keyframes pulsate {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.1;
+  }
+}

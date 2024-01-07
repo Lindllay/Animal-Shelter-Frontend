@@ -1,5 +1,5 @@
 import styles from "./_AddAnimal.module.scss";
-import Input from "../../../common/form/Input";
+import { Input, Textarea } from "../../../common/form";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 import { useFormik } from "formik";
 import axios from "axios";
@@ -7,10 +7,17 @@ import animalValidationSchema from "../../../lib/formik/AnimalValidationSchema";
 import { useState } from "react";
 import { Select } from "../../../common/form";
 import { url } from "../../../utils/config";
+import useAuth from "../../../hooks/useAuth";
 
 let formDataImage;
 
 const AddAnimal = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasImage, setHasImage] = useState(false);
+  const { role } = useAuth();
+
+  const token = localStorage.getItem("token");
+
   const initialValues = {
     name: "",
     age: "",
@@ -20,7 +27,9 @@ const AddAnimal = () => {
     gender: "male",
     adoptedAt: "",
     description: "",
-    image: "",
+    imageSrc: "",
+    imageSrcSmall: "",
+    imageId: "",
   };
 
   const { values, errors, touched, handleChange, handleSubmit, handleReset } =
@@ -32,13 +41,22 @@ const AddAnimal = () => {
           setIsLoading(true);
           const { data } = await axios.post(
             `${url}api/v1/upload`,
-            formDataImage
+            formDataImage,
+            { headers: { Authorization: `Bearer ${token}` } }
           );
 
-          await axios.post(`${url}api/v1/animals`, {
-            data: { ...values, image: data.image.src },
-            image_id: data.image.public_id,
-          });
+          await axios.post(
+            `${url}api/v1/animals`,
+            {
+              data: {
+                ...values,
+                imageSrc: data.image.src,
+                imageSrcSmall: data.image.srcSmall,
+                imageId: data.image.public_id,
+              },
+            },
+            { headers: { Authorization: `Bearer ${token}` } }
+          );
           handleReset();
           setIsLoading(false);
         } catch (error) {
@@ -46,9 +64,6 @@ const AddAnimal = () => {
         }
       },
     });
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasImage, setHasImage] = useState(false);
 
   const handleImage = (e) => {
     const imageFile = e.target.files[0];
@@ -104,6 +119,7 @@ const AddAnimal = () => {
           type="select"
           value={values.species}
           onChange={handleChange}
+          className={styles.species}
         >
           <option value="dog" defaultChecked>
             Pies
@@ -116,6 +132,7 @@ const AddAnimal = () => {
           type="select"
           value={values.gender}
           onChange={handleChange}
+          className={styles.gender}
         >
           <option value="male">Samiec</option>
           <option value="female">Samica</option>
@@ -126,13 +143,15 @@ const AddAnimal = () => {
           type="date"
           onChange={handleChange}
           value={values.adoptedAt}
+          className={styles.date}
         ></Input>
-        <Input
+        <Textarea
           id="description"
           type="text"
           label="Opis"
           onChange={handleChange}
           value={values.description}
+          className={styles.description}
         />
         <Input
           id="image"
@@ -141,9 +160,16 @@ const AddAnimal = () => {
           touched={touched.image}
           error={errors.image}
           showError={hasImage}
+          className={styles.imageInput}
         />
 
-        <button type="submit" className={styles.btn}>
+        <button
+          type="submit"
+          className={`${styles.btn} ${
+            role !== "admin" ? styles["btn-disabled"] : ""
+          }`}
+          disabled={role !== "admin"}
+        >
           {isLoading && <LoadingSpinner />}
           {isLoading ? "Wysyłanie..." : "Dodaj"}
         </button>

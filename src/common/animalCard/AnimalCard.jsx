@@ -1,19 +1,20 @@
 import styles from "./_AnimalCard.module.scss";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../UI/LoadingSpinner.jsx";
+import { forwardRef } from "react";
 
-const AnimalCard = (props) => {
-  const { name, age, breed, gender, image, weight, id } = props.data;
+const AnimalCard = forwardRef((props, ref) => {
+  const { name, age, breed, gender, imageSrc, weight, id } = props.data;
   const { isLoading } = props;
 
   return (
     <li className={styles.li}>
-      <Link className={styles.card} to={props.to}>
+      <Link className={styles.card} to={props.to} ref={ref}>
         {isLoading && <LoadingSpinner className={styles.spinner} />}
         {!isLoading && (
           <>
             <div className={styles["image-wrapper"]}>
-              <img src={image} className={styles.image}></img>
+              <img src={imageSrc} className={styles.image}></img>
             </div>
             <div className={styles.content}>
               <p className={styles.name}>
@@ -37,6 +38,6 @@ const AnimalCard = (props) => {
       </Link>
     </li>
   );
-};
+});
 
 export default AnimalCard;

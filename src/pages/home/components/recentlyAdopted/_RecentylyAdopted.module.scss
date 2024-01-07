@@ -2,6 +2,8 @@
   position: relative;
 
   padding-block: 15rem;
+  // margin-block: 15rem;
+  overflow: hidden;
 }
 
 .wrapper::before {
@@ -16,16 +18,34 @@
 
   position: absolute;
   background-size: 50%;
-  top: -50px;
+  top: 0px;
   right: 0px;
   left: 0px;
   bottom: 0px;
   opacity: 0.1;
 
-  z-index: -12;
+  z-index: -99;
+
+  animation: rotation 7s infinite;
 }
 
-.header {
+.wrapper::after {
+  content: "";
+  background: linear-gradient(var(--color-brown-300), var(--color-brown-400));
+  border-radius: 3rem;
+  position: absolute;
+  width: calc(100% - var(--padding-page-inline));
+  height: 45rem;
+  left: 50%;
+  top: 40rem;
+  translate: -50% 0;
+
+  z-index: -1;
+
+  clip-path: polygon(0 33%, 100% 23%, 100% 100%, 0% 100%);
+}
+
+.wrapper .header {
   background-image: linear-gradient(rgb(80, 34, 7), rgb(39, 14, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -46,4 +66,21 @@
   grid-template-columns: repeat(auto-fit, 35rem);
   grid-auto-rows: 50rem;
   gap: 5rem;
+  min-height: 35rem;
+}
+
+.scaleUp {
+  scale: 1.05;
+}
+.scaleDown {
+  scale: 0.95;
+}
+
+@keyframes rotation {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 5deg;
+  }
 }

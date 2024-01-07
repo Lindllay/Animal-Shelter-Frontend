@@ -1,20 +1,25 @@
 .sidebar-btn {
-	padding: 1.5rem 2.5rem;
-	width: 100%;
+  padding: 1.5rem 1.5rem;
+  width: 100%;
 
-	display: flex;
-	align-items: center;
-	justify-content: start;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 
-	text-decoration: none;
-	color: black;
-	font-weight: 300;
-	transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  position: relative;
+  border-radius: 1rem;
 
-	&:hover {
-		background-color: var(--color-brown-200);
-	}
+  &:hover svg {
+    scale: 1.1;
+  }
 }
 .active {
-	background-color: var(--color-brown-200);
+  background: linear-gradient(to left, #bb917c, #cea793);
+}
+
+.arrow {
+  margin-left: auto;
 }

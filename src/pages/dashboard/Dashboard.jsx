@@ -1,23 +1,23 @@
-import { Route, Routes, useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import styles from "./_Dashboard.module.scss";
-import AddPage from "./add/AddPage";
+
 import DatabasePage from "./database/DatabasePage";
 import StatisticsPage from "./statistics/StatisticsPage";
 import SettingsPage from "./settings/SettingsPage";
-import Unauthorized from "../unauthorized/Unauthorized";
+import AddAnimal from "./add/AddAnimal";
+import AddArticle from "./add/AddArticle";
 
 import Sidebar from "./components/sidebar/Sidebar";
 
-import AuthContext from "../../context/authContext";
+import RequireAuth from "../../utils/requireAuth";
+import useAuth from "../../hooks/useAuth";
+import Unauthenticated from "../unauthenticated/Unauthenticated";
+import InfoCard from "./components/_InfoCard";
 
-const Dashboard = (props) => {
-  const {
-    isAuthenticated,
-    isLoading: isVerifying,
-    verifyToken,
-  } = useContext(AuthContext);
+const Dashboard = () => {
+  const { isAuthenticated, isFetched, verifyToken } = useAuth();
 
   const { pathname } = useLocation();
 
@@ -25,29 +25,27 @@ const Dashboard = (props) => {
     verifyToken();
   }, [pathname]);
 
-  if (!isAuthenticated && isVerifying)
+  if (!isAuthenticated && isFetched)
     return (
       <div className={styles.wrapper}>
-        <Sidebar />
+        <Unauthenticated />
       </div>
     );
 
-  if (!isAuthenticated && !isVerifying)
+  if (isAuthenticated && isFetched)
     return (
       <div className={styles.wrapper}>
-        <Unauthorized />
-      </div>
-    );
-
-  if (isAuthenticated)
-    return (
-      <div className={styles.wrapper}>
+        <InfoCard />
         <Sidebar />
         <Routes>
-          <Route path="add/*" element={<AddPage />} />
-          <Route path="database" element={<DatabasePage />} />
-          <Route path="statistics" element={<StatisticsPage />} />
-          <Route path="settings" element={<SettingsPage />} />
+          <Route path="add" element={<Navigate to="animal" />} />
+          <Route path="add/animal" element={<AddAnimal />} />
+          <Route path="add/article" element={<AddArticle />} />
+          <Route path="base" element={<DatabasePage />} />
+          <Route path="stats" element={<StatisticsPage />} />
+          <Route element={<RequireAuth allowedRole={"admin"} />}>
+            <Route path="settings" element={<SettingsPage />} />
+          </Route>
         </Routes>
       </div>
     );

@@ -1,16 +1,8 @@
-import styles from "./_Article.module.scss";
+import styles from "./_ArticleCard.module.scss";
 import { Link } from "react-router-dom";
 
-const Article = (props) => {
-  const {
-    _id: id,
-    title,
-    date,
-    image,
-    introduction,
-    description,
-    alt,
-  } = props.data;
+const ArticleCard = (props) => {
+  const { title, date, imageSrc, introduction, alt } = props.data;
 
   return (
     <article className={styles.article}>
@@ -18,13 +10,15 @@ const Article = (props) => {
         <h1>{title}</h1>
         <span>{date.split("T")[0]}</span>
         <p>{introduction}</p>
-        <Link className={styles.link}>Czytaj więcej</Link>
+        <Link className={styles.link} to={props.to}>
+          Czytaj więcej
+        </Link>
       </div>
       <picture className={styles.picture}>
-        <img src={image} alt={alt} />
+        <img src={imageSrc} alt={alt} />
       </picture>
     </article>
   );
 };
 
-export default Article;
+export default ArticleCard;

@@ -1,0 +1,32 @@
+.search-content {
+  display: flex;
+  justify-content: end;
+}
+
+.picture {
+  position: absolute;
+  left: 13rem;
+  height: 8rem;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.search-input {
+  width: 50rem !important;
+  height: 4rem;
+  align-self: flex-end;
+
+  & input {
+    outline: none;
+    font-size: 1.6rem;
+  }
+}
+
+.search-input.focus input {
+  border-radius: 2rem 2rem 0 0;
+  border-bottom: none;
+  outline: none;
+}

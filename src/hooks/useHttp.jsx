@@ -9,13 +9,14 @@ const useHttp = () => {
     setIsLoading(true), setError(null);
 
     try {
-      const response = await axios.get(
+      const response = await axios[requestConfig.method](
         requestConfig.url,
         requestConfig.payload
           ? {
               ...requestConfig.payload,
             }
-          : ""
+          : "",
+        requestConfig.headers ? { headers: requestConfig.headers } : ""
       );
 
       if (response.statusText !== "OK") throw new Error("Request Failed");
@@ -23,7 +24,9 @@ const useHttp = () => {
       const data = response.data;
 
       applyData(data);
-    } catch (error) {}
+    } catch (error) {
+      setError(error.message);
+    }
     setIsLoading(false);
   });
 

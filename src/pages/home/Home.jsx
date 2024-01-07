@@ -3,16 +3,18 @@ import Hero from "./components/hero/Hero";
 import Tax from "./components/tax/Tax";
 import RecentlyAdopted from "./components/recentlyAdopted/RecentlyAdopted";
 import Questions from "./components/questions/Questions";
+import Benefits from "./components/benefits/Benefits";
 
 const Home = (props) => {
-	return (
-		<section className={styles.home}>
-			<Hero />
-			<Tax />
-			<RecentlyAdopted />
-			<Questions />
-		</section>
-	);
+  return (
+    <>
+      <Hero />
+      {/* <Benefits /> */}
+      <Tax />
+      <RecentlyAdopted />
+      <Questions />
+    </>
+  );
 };
 
 export default Home;

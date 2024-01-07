@@ -17,19 +17,6 @@
     resize: none;
     overflow: hidden;
   }
-  textarea[type="file"] {
-    border: unset;
-
-    &::file-selector-button {
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 5rem;
-      background: var(--main-gradient);
-      color: white;
-      font-weight: 300;
-      font-size: 1.4rem;
-    }
-  }
 }
 
 .form-row.error {
