@@ -16,6 +16,7 @@ import useAuth from "../../hooks/useAuth";
 import Unauthenticated from "../unauthenticated/Unauthenticated";
 import InfoCard from "./components/_InfoCard";
 import LoadingSpinner from "../../common/UI/LoadingSpinner";
+import { useState } from "react";
 
 const Dashboard = () => {
   const { isAuthenticated, isFetched, isLoading, verifyToken } = useAuth();
