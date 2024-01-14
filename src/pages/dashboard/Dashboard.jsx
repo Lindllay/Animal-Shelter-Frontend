@@ -10,8 +10,8 @@ import AddAnimal from "./add/AddAnimal";
 import AddArticle from "./add/AddArticle";
 
 import Sidebar from "./components/sidebar/Sidebar";
-
 import RequireAuth from "../../utils/requireAuth";
+
 import useAuth from "../../hooks/useAuth";
 import Unauthenticated from "../unauthenticated/Unauthenticated";
 import InfoCard from "./components/_InfoCard";
