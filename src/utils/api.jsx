@@ -49,9 +49,9 @@ import { url } from "./config";
 //   }
 // };
 
-const token = localStorage.getItem("token");
-
 export const uploadData = async (values, formDataImage, route) => {
+  const token = localStorage.getItem("token");
+
   try {
     const { data } = await axios.post(`${url}api/v1/upload`, formDataImage, {
       headers: { Authorization: `Bearer ${token}` },
