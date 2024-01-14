@@ -2,7 +2,7 @@ import styles from "./_Animals.module.scss";
 import formatAge from "../../../utils/formatAge";
 import formatDate from "../../../utils/formatDate";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const Animals = (props) => {
   const { data, isLoading } = props;

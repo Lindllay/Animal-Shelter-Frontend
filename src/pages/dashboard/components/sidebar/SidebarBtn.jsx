@@ -1,6 +1,7 @@
 import styles from "./_SidebarBtn.module.scss";
-import { ArrowIconSmall } from "../../../../common/UI/icons";
 import { NavLink } from "react-router-dom";
+
+import { IoMdArrowDropright } from "react-icons/io";
 
 const SidebarBtn = (props) => {
   return (
@@ -14,7 +15,7 @@ const SidebarBtn = (props) => {
       onClick={props.onClick}
     >
       {props.children}
-      {props.subpages && <ArrowIconSmall className={styles.arrow} />}
+      {props.subpages && <IoMdArrowDropright className={styles.arrow} />}
     </NavLink>
   );
 };

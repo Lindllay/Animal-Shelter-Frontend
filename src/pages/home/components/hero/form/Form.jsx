@@ -1,6 +1,5 @@
 import styles from "./_Form.module.scss";
 import paw from "../../../../../assets/images/paw.png";
-import { DogIcon, CatIcon } from "../../../../../common/UI/icons";
 import {
   RadioBtn,
   RadioContainer,
@@ -10,6 +9,8 @@ import {
 import { useContext } from "react";
 import FiltersContext from "../../../../../context/filtersContext";
 import { useNavigate } from "react-router-dom";
+
+import { PiDog, PiCat } from "react-icons/pi";
 
 const Form = () => {
   const filtersCtx = useContext(FiltersContext);
@@ -53,7 +54,7 @@ const Form = () => {
           className={styles["radio-btn"]}
           onClick={onRadioBtnChange}
         >
-          <DogIcon />
+          <PiDog />
           <span>Pies</span>
         </RadioBtn>
 
@@ -66,7 +67,7 @@ const Form = () => {
           className={styles["radio-btn"]}
           onClick={onRadioBtnChange}
         >
-          <CatIcon />
+          <PiCat />
           <span>Kot</span>
         </RadioBtn>
 

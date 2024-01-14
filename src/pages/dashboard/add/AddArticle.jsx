@@ -2,9 +2,8 @@ import styles from "./_AddArticle.module.scss";
 import articleValidationSchema from "../../../lib/formik/ArticleValidationSchema";
 import { useState } from "react";
 import { useFormik } from "formik";
-import { url } from "../../../utils/config";
 import { Input, Textarea } from "../../../common/form";
-import axios from "axios";
+import { uploadData } from "../../../utils/api";
 
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 
@@ -21,8 +20,6 @@ const AddArticle = () => {
     alt: "",
   };
 
-  const token = localStorage.getItem("token");
-
   const { values, errors, touched, handleChange, handleSubmit, handleReset } =
     useFormik({
       initialValues,
@@ -30,28 +27,12 @@ const AddArticle = () => {
       onSubmit: async (values) => {
         try {
           setIsLoading(true);
-          const { data } = await axios.post(
-            `${url}api/v1/upload`,
-            formDataImage,
-            { headers: { Authorization: `Bearer ${token}` } }
-          );
-
-          await axios.post(
-            `${url}api/v1/articles`,
-            {
-              data: {
-                ...values,
-                imageSrc: data.image.src,
-                imageSrcSmall: data.image.srcSmall,
-                imageId: data.image.public_id,
-              },
-            },
-            { headers: { Authorization: `Bearer ${token}` } }
-          );
+          await uploadData(values, formDataImage, "articles");
           handleReset();
-          setIsLoading(false);
         } catch (error) {
-          console.error(error);
+          console.log(error);
+        } finally {
+          setIsLoading(false);
         }
       },
     });

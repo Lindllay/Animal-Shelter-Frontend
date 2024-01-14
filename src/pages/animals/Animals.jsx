@@ -2,18 +2,18 @@ import { useEffect, useState, useContext } from "react";
 import FiltersContext from "../../context/filtersContext";
 import styles from "./_Animals.module.scss";
 import AnimalCard from "../../common/animalCard/AnimalCard";
-import Filter from "../../common/filter/Filter";
+import Filter from "./filter/Filter";
 import LoadingSpinner from "../../common/UI/LoadingSpinner";
 import { url } from "../../utils/config";
 import useHttp from "../../hooks/useHttp";
 
-const Animals = (props) => {
+const Animals = () => {
   const filtersCtx = useContext(FiltersContext);
   const { filters } = filtersCtx;
 
-  const { isLoading, sendRequest } = useHttp();
+  const { isLoading, sendRequest, error } = useHttp();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ animals: [], amount: null });
 
   const fetchAnimalsHandler = () => {
     sendRequest(
@@ -22,25 +22,17 @@ const Animals = (props) => {
         payload: { params: filters },
         method: "get",
       },
-      transformData
+      setData
     );
   };
 
-  const transformData = (data) => {
-    const transformedData = data.animals.map((animal) => {
-      return { ...animal, id: animal._id };
-    });
-
-    setData(transformedData);
-  };
+  const animals = data.animals.map((animalData) => (
+    <AnimalCard data={animalData} key={animalData._id} to={animalData._id} />
+  ));
 
   useEffect(() => {
     fetchAnimalsHandler();
   }, []);
-
-  const animals = data.map((animalData) => (
-    <AnimalCard data={animalData} key={animalData.id} to={animalData.id} />
-  ));
 
   const results = (value) => {
     if (value == 1) {
@@ -58,8 +50,8 @@ const Animals = (props) => {
       {isLoading && <LoadingSpinner className={styles.spinner} />}
       {!isLoading && (
         <>
-          <h1 className={styles.h1}>{`Znaleziono ${data.length} ${results(
-            data.length
+          <h1 className={styles.h1}>{`Znaleziono ${data.amount} ${results(
+            data.amount
           )}`}</h1>
           <ul className={styles.list}>{animals}</ul>
         </>

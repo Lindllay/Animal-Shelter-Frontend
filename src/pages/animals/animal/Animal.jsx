@@ -5,6 +5,7 @@ import { url } from "../../../utils/config";
 import useHttp from "../../../hooks/useHttp";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 import formatAge from "../../../utils/formatAge";
+import PreviousPageBtn from "../../../common/UI/PreviousPageBtn";
 
 const Animal = () => {
   const [data, setData] = useState(null);
@@ -85,6 +86,7 @@ const Animal = () => {
             </li>
           </ul>
         </div>
+        <PreviousPageBtn />
       </div>
     );
 };

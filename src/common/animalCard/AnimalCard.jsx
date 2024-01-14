@@ -4,7 +4,7 @@ import LoadingSpinner from "../UI/LoadingSpinner.jsx";
 import { forwardRef } from "react";
 
 const AnimalCard = forwardRef((props, ref) => {
-  const { name, age, breed, gender, imageSrc, weight, id } = props.data;
+  const { name, age, breed, gender, imageSrc, weight, _id } = props.data;
   const { isLoading } = props;
 
   return (

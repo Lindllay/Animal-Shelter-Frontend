@@ -1,6 +1,5 @@
 .list {
   display: none;
-  // display: flex; // Do zmiany
   flex-direction: column;
 
   position: absolute;
@@ -14,8 +13,6 @@
   border-top: 1px solid #bb917c54;
   border-bottom-left-radius: 2rem;
   z-index: 1;
-  // box-shadow: inset 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-  // padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 
   overflow-y: auto;
 
@@ -88,4 +85,13 @@
       color: var(--color-brown-400);
     }
   }
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  color: var(--color-brown-200);
 }

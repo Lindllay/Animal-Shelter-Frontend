@@ -1,41 +1,46 @@
 import { NavLink } from "react-router-dom";
 import styles from "./_Navigation.module.scss";
+
 import {
-  BookIcon,
-  PawIcon,
-  QuestionIcon,
-  PeopleIcon,
-  PhoneIcon,
-  MagnifierIcon,
-} from "../../UI/icons";
+  PiNewspaperClipping,
+  PiPawPrint,
+  PiQuestion,
+  PiPhoneCall,
+} from "react-icons/pi";
+import { GoPeople } from "react-icons/go";
+import { SlMagnifier } from "react-icons/sl";
 
 const Navigation = (props) => (
   <nav>
     <ul className={styles.ul}>
       <li>
-        <NavLink to="/news" className={`${styles.link} ${styles["link--1"]} `}>
-          <BookIcon className={styles["nav-icon"]} />
-          Aktualności
-        </NavLink>
-      </li>
-      <li>
         <NavLink
           to="/animals"
           className={`${styles.link} ${styles["link--1"]}`}
         >
-          <PawIcon className={styles["nav-icon"]} />
+          {/* <PawIcon className={styles["nav-icon"]} /> */}
+          <PiPawPrint className={styles["nav-icon"]} />
           Zwierzęta
         </NavLink>
       </li>
       <li>
+        <NavLink to="/news" className={`${styles.link} ${styles["link--1"]} `}>
+          {/* <BookIcon className={styles["nav-icon"]} /> */}
+          <PiNewspaperClipping className={styles["nav-icon"]} />
+          Aktualności
+        </NavLink>
+      </li>
+      <li>
         <NavLink to="/help" className={`${styles.link} ${styles["link--1"]}`}>
-          <QuestionIcon className={styles["nav-icon"]} />
+          {/* <QuestionIcon className={styles["nav-icon"]} /> */}
+          <PiQuestion className={styles["nav-icon"]} />
           Jak pomóc?
         </NavLink>
       </li>
       <li>
         <NavLink to="/about" className={`${styles.link} ${styles["link--1"]}`}>
-          <PeopleIcon className={styles["nav-icon"]} />O nas
+          {/* <PeopleIcon className={styles["nav-icon"]} /> */}
+          <GoPeople className={styles["nav-icon"]} />O nas
         </NavLink>
       </li>
       <li>
@@ -43,13 +48,15 @@ const Navigation = (props) => (
           to="/contact"
           className={`${styles.link} ${styles["link--2"]} `}
         >
-          <PhoneIcon className={styles["nav-icon"]} />
+          {/* <PhoneIcon className={styles["nav-icon"]} /> */}
+          <PiPhoneCall className={styles["nav-icon"]} />
           Kontakt
         </NavLink>
       </li>
       <li>
         <button className={styles["search-btn"]} onClick={props.activateSearch}>
-          <MagnifierIcon className={styles["search-icon"]} />
+          {/* <MagnifierIcon className={styles["search-icon"]} /> */}
+          <SlMagnifier className={styles["search-icon"]} />
         </button>
       </li>
     </ul>

@@ -1,0 +1,19 @@
+.btn {
+  background: none;
+  border: none;
+  //   border: 1px solid black;
+  //   border-radius: 2rem;
+
+  font-size: 2rem;
+  color: rgb(75, 30, 0);
+  text-decoration: underline;
+  //   padding: 0.8rem 2rem;
+  //   font-weight: 400;
+  cursor: pointer;
+  position: absolute;
+  top: 13rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

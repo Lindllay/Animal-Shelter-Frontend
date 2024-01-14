@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./_Login.module.scss";
 import Input from "../../common/form/Input";
@@ -9,14 +9,14 @@ import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [values, setValues] = useState({ email: "", password: "" });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState({ admin: false, test: false });
   const [error, setError] = useState("");
   const { isAuthenticated, setRole, logout, role } = useAuth();
 
   const navigate = useNavigate();
 
   const navigateDashboard = () => {
-    navigate("/dashboard");
+    navigate("/dashboard/add/animal");
   };
 
   const handleChange = (e) => {
@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     try {
-      setIsLoading(true);
+      setIsLoading({ admin: true, test: false });
       const response = await axios.post(`${url}api/v1/login`, {
         email: values.email,
         password: values.password,
@@ -41,7 +41,6 @@ const Login = () => {
 
       localStorage.setItem("token", token);
       setRole(role);
-      setIsLoading(false);
       navigateDashboard();
     } catch (error) {
       console.log(error);
@@ -53,7 +52,29 @@ const Login = () => {
         setError("Login Failed");
       }
     } finally {
-      setIsLoading(false);
+      setIsLoading({ admin: false, test: false });
+    }
+  };
+
+  const submitHandlerDemoAcc = async (e) => {
+    e.preventDefault();
+    try {
+      setIsLoading({ admin: false, test: true });
+
+      const response = await axios.post(`${url}api/v1/login`, {
+        email: "demo@test.pl",
+        password: "demo",
+      });
+      const { token, role } = response?.data;
+
+      localStorage.setItem("token", token);
+      setRole(role);
+
+      navigateDashboard();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading({ admin: false, test: false });
     }
   };
 
@@ -89,11 +110,23 @@ const Login = () => {
             {error && <p className={styles.error}>{error}</p>}
             <button
               type="submit"
-              className={styles.btn}
+              className={`${styles.btn} ${styles["btn--main"]}`}
               onClick={submitHandler}
             >
-              {isLoading && <LoadingSpinner className={styles.spinner} />}
+              {isLoading.admin && (
+                <LoadingSpinner className={styles["spinner--admin"]} />
+              )}
               Zaloguj
+            </button>
+            <button
+              type="submit"
+              className={`${styles.btn} ${styles["btn--test"]}`}
+              onClick={submitHandlerDemoAcc}
+            >
+              {isLoading.test && (
+                <LoadingSpinner className={styles["spinner--test"]} />
+              )}
+              Konto testowe
             </button>
           </form>
         </>
@@ -105,10 +138,16 @@ const Login = () => {
             {` ${role === "admin" ? "Administrator" : "Konto Testowe"}`}
           </p>
           <div className={styles["btn-wrapper"]}>
-            <button className={styles.btn} onClick={navigateDashboard}>
+            <button
+              className={`${styles.btn} ${styles["btn--main"]}`}
+              onClick={navigateDashboard}
+            >
               Kontynuuj
             </button>
-            <button className={styles.btn} onClick={logout}>
+            <button
+              className={`${styles.btn} ${styles["btn--secondary"]}`}
+              onClick={logout}
+            >
               Wyloguj
             </button>
           </div>

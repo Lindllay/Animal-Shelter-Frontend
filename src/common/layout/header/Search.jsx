@@ -16,7 +16,7 @@ const Search = (props) => {
 
   const nameInputChangeHandler = () => {
     setEnteredName(searchRef.current.value);
-    setAnimals({ animals: [], count: 0 });
+    setAnimals({ animals: [], count: null });
   };
 
   const getSelectedNameHandler = (name) => {
@@ -35,7 +35,6 @@ const Search = (props) => {
       );
     }, 300);
     return () => {
-      console.log("Cleanup...");
       clearTimeout(identifier);
     };
   }, [enteredName]);

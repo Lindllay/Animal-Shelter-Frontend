@@ -8,16 +8,15 @@ import ScrollToTop from "./utils/scrollToTop.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop>
-        <AuthContextProvider>
-          <FiltersContextProvider>
-            <Routes>
+    {/* <BrowserRouter> */}
+    <AuthContextProvider>
+      <FiltersContextProvider>
+        {/* <Routes>
               <Route path="/*" element={<App />}></Route>
-            </Routes>
-          </FiltersContextProvider>
-        </AuthContextProvider>
-      </ScrollToTop>
-    </BrowserRouter>
+            </Routes> */}
+        <App />
+      </FiltersContextProvider>
+    </AuthContextProvider>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );

@@ -1,6 +1,6 @@
 import styles from "./_Filter.module.scss";
 import { useContext } from "react";
-import FiltersContext from "../../context/filtersContext";
+import FiltersContext from "../../../context/filtersContext";
 
 import {
   Input,
@@ -8,8 +8,8 @@ import {
   RadioContainer,
   RadioOption,
   Select,
-} from "../../common/form/";
-import { DogIcon, CatIcon } from "../UI/icons";
+} from "../../../common/form/";
+import { PiDog, PiCat } from "react-icons/pi";
 
 const Filter = (props) => {
   const filtersCtx = useContext(FiltersContext);
@@ -79,7 +79,7 @@ const Filter = (props) => {
         className={styles.dog}
         onClick={onRadioBtnChange}
       >
-        <DogIcon />
+        <PiDog />
         <span>Pies</span>
       </RadioBtn>
 
@@ -91,7 +91,7 @@ const Filter = (props) => {
         className={styles.cat}
         onClick={onRadioBtnChange}
       >
-        <CatIcon />
+        <PiCat />
         <span>Kot</span>
       </RadioBtn>
 

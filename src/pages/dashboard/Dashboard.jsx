@@ -15,9 +15,10 @@ import RequireAuth from "../../utils/requireAuth";
 import useAuth from "../../hooks/useAuth";
 import Unauthenticated from "../unauthenticated/Unauthenticated";
 import InfoCard from "./components/_InfoCard";
+import LoadingSpinner from "../../common/UI/LoadingSpinner";
 
 const Dashboard = () => {
-  const { isAuthenticated, isFetched, verifyToken } = useAuth();
+  const { isAuthenticated, isFetched, isLoading, verifyToken } = useAuth();
 
   const { pathname } = useLocation();
 
@@ -29,6 +30,13 @@ const Dashboard = () => {
     return (
       <div className={styles.wrapper}>
         <Unauthenticated />
+      </div>
+    );
+
+  if (!isAuthenticated && !isFetched)
+    return (
+      <div className={styles.wrapper}>
+        <LoadingSpinner className={styles.spinner} />
       </div>
     );
 

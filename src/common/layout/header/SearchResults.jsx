@@ -4,7 +4,7 @@ import LoadingSpinner from "../../UI/LoadingSpinner";
 import formatAge from "../../../utils/formatAge";
 
 const SearchResults = (props) => {
-  const { data, isLoading, error, getName, getElement, isOpened } = props;
+  const { data, isLoading, error, getName, isOpened } = props;
   const { animals: animalsArray, count } = data;
 
   const animals = animalsArray.map((animal) => (
@@ -46,6 +46,11 @@ const SearchResults = (props) => {
       onClick={props.onClick}
     >
       {isLoading ? <LoadingSpinner className={styles.spinner} /> : animals}
+      {count === 0 && (
+        <div className={styles["no-results"]}>
+          Brak wyników spełniających kryteria
+        </div>
+      )}
     </ul>
   );
 };

@@ -1,12 +1,12 @@
 import styles from "./_News.module.scss";
-import ArticleCard from "../../common/articleCard/ArticleCard";
+import ArticleCard from "./article/ArticleCard";
 import { useState, useEffect } from "react";
 import useHttp from "../../hooks/useHttp";
 import { url } from "../../utils/config";
 
 const News = () => {
   const [data, setData] = useState([]);
-  const { isLoading, error, sendRequest } = useHttp();
+  const { sendRequest } = useHttp();
 
   const fetchArticlesHandler = () => {
     sendRequest({ url: `${url}api/v1/articles`, method: "get" }, transformData);

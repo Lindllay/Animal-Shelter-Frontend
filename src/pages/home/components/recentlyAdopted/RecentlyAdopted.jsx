@@ -7,18 +7,11 @@ import { url } from "../../../../utils/config";
 import AnimalCard from "../../../../common/animalCard/AnimalCard";
 
 const RecentlyAdopted = () => {
-  const { isLoading, error, sendRequest } = useHttp();
+  const { isLoading, sendRequest } = useHttp();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ animals: [], amount: null });
 
   const cardRef = useRef();
-
-  const transformData = (data) => {
-    const transformedData = data.animals.map((animal) => {
-      return { ...animal, id: animal._id };
-    });
-    setData(transformedData);
-  };
 
   const startFetching = (entries, observer) => {
     const [entry] = entries;
@@ -30,7 +23,7 @@ const RecentlyAdopted = () => {
           payload: { params: { sort: "-adoptedAt", limit: 3 } },
           method: "get",
         },
-        transformData
+        setData
       );
       observer.unobserve(entry.target);
     }
@@ -51,8 +44,6 @@ const RecentlyAdopted = () => {
     const cardsContainer = document.querySelector(`.${styles.list}`);
     const cardsArray = [...cardsContainer.childNodes];
 
-    // console.log(cardsArray);
-
     cardsArray.map((card) => {
       card.addEventListener("mouseenter", (e) => {
         const siblings = cardsArray.filter((node) => node !== card);
@@ -67,19 +58,13 @@ const RecentlyAdopted = () => {
         card.classList.remove(styles.scaleUp);
       });
     });
-
-    document.addEventListener("click", (e) => {
-      if (e.target === cardsContainer) console.log("container");
-    });
-
-    // document.addEventListener("mouseenter")
   }, [data]);
 
-  const animals = data.map((animalData) => (
+  const animals = data.animals.map((animalData) => (
     <AnimalCard
       data={animalData}
-      key={animalData.id}
-      to={`animals/${animalData.id}`}
+      key={animalData._id}
+      to={`animals/${animalData._id}`}
       isLoading={isLoading}
       ref={cardRef}
     />

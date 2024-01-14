@@ -2,12 +2,11 @@ import styles from "./_AddAnimal.module.scss";
 import { Input, Textarea } from "../../../common/form";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 import { useFormik } from "formik";
-import axios from "axios";
 import animalValidationSchema from "../../../lib/formik/AnimalValidationSchema";
 import { useState } from "react";
 import { Select } from "../../../common/form";
-import { url } from "../../../utils/config";
 import useAuth from "../../../hooks/useAuth";
+import { uploadData } from "../../../utils/api";
 
 let formDataImage;
 
@@ -15,8 +14,6 @@ const AddAnimal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasImage, setHasImage] = useState(false);
   const { role } = useAuth();
-
-  const token = localStorage.getItem("token");
 
   const initialValues = {
     name: "",
@@ -39,28 +36,12 @@ const AddAnimal = () => {
       onSubmit: async (values) => {
         try {
           setIsLoading(true);
-          const { data } = await axios.post(
-            `${url}api/v1/upload`,
-            formDataImage,
-            { headers: { Authorization: `Bearer ${token}` } }
-          );
-
-          await axios.post(
-            `${url}api/v1/animals`,
-            {
-              data: {
-                ...values,
-                imageSrc: data.image.src,
-                imageSrcSmall: data.image.srcSmall,
-                imageId: data.image.public_id,
-              },
-            },
-            { headers: { Authorization: `Bearer ${token}` } }
-          );
+          await uploadData(values, formDataImage, "animals");
           handleReset();
-          setIsLoading(false);
         } catch (error) {
-          console.error(error);
+          console.log(error);
+        } finally {
+          setIsLoading(false);
         }
       },
     });

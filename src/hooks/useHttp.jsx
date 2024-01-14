@@ -19,15 +19,14 @@ const useHttp = () => {
         requestConfig.headers ? { headers: requestConfig.headers } : ""
       );
 
-      if (response.statusText !== "OK") throw new Error("Request Failed");
-
       const data = response.data;
 
       applyData(data);
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   });
 
   return { isLoading, error, sendRequest };
