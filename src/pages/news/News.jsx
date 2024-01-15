@@ -3,10 +3,11 @@ import ArticleCard from "./article/ArticleCard";
 import { useState, useEffect } from "react";
 import useHttp from "../../hooks/useHttp";
 import { url } from "../../utils/config";
+import LoadingSpinner from "../../common/UI/LoadingSpinner";
 
 const News = () => {
   const [data, setData] = useState([]);
-  const { sendRequest } = useHttp();
+  const { sendRequest, isLoading } = useHttp();
 
   const fetchArticlesHandler = () => {
     sendRequest({ url: `${url}api/v1/articles`, method: "get" }, transformData);
@@ -34,8 +35,13 @@ const News = () => {
 
   return (
     <section className={styles.section}>
-      <h1 className={styles.h1}>Aktualności</h1>
-      <div className={styles.articles}>{articles}</div>
+      {isLoading && <LoadingSpinner className={styles.spinner} />}
+      {!isLoading && (
+        <>
+          <h1 className={styles.h1}>Aktualności</h1>
+          <div className={styles.articles}>{articles}</div>
+        </>
+      )}
     </section>
   );
 };

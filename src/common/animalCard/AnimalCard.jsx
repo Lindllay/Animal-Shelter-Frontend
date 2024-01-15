@@ -2,6 +2,7 @@ import styles from "./_AnimalCard.module.scss";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../UI/LoadingSpinner.jsx";
 import { forwardRef } from "react";
+import formatAge from "../../utils/formatAge.jsx";
 
 const AnimalCard = forwardRef((props, ref) => {
   const { name, age, breed, gender, imageSrc, weight, _id } = props.data;
@@ -24,13 +25,13 @@ const AnimalCard = forwardRef((props, ref) => {
                 Rasa: <span>{breed}</span>
               </p>
               <p className={styles.age}>
-                Wiek: <span>{age}</span>
+                Wiek: <span>{`${age} ${formatAge(age)}`}</span>
               </p>
               <p className={styles.gender}>
-                Płeć: <span>{gender === "male" ? "samiec" : "samica"}</span>
+                Płeć: <span>{gender === "male" ? "Samiec" : "Samica"}</span>
               </p>
-              <p className={styles.age}>
-                Waga: <span>{weight}</span>
+              <p className={styles.weight}>
+                Waga: <span>{weight}kg</span>
               </p>
             </div>
           </>

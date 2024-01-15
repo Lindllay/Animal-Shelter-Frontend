@@ -1,11 +1,9 @@
 import "./_App.scss";
 import {
-  Routes,
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  ScrollRestoration,
 } from "react-router-dom";
 
 import Layout from "./common/layout/Layout";
@@ -38,25 +36,7 @@ function App() {
     )
   );
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-    // <Routes>
-    //   <Route path="/" element={<Layout />}>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/news" element={<News />} />
-    //     <Route path="/news/:id" element={<Article />} />
-    //     <Route path="/animals" element={<Animals />} />
-    //     <Route path="/animals/:id" element={<Animal />} />
-    //     <Route path="/help" element={<Help />} />
-    //     <Route path="/about" element={<About />} />
-    //     <Route path="/contact" element={<Contact />} />
-    //     <Route path="/login" element={<Login />} />
-    //     <Route path="/dashboard/*" element={<Dashboard />} />
-    //   </Route>
-    // </Routes>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
