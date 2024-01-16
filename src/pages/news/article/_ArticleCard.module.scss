@@ -5,6 +5,10 @@
   box-shadow: 2px 0px 15px 0px rgba(32, 17, 17, 0.2);
   border-radius: 1rem;
   overflow: hidden;
+
+  & > * {
+    animation: reveal 1s;
+  }
 }
 
 .content {
@@ -52,4 +56,13 @@
 .link:hover {
   color: var(--color-brown-600);
   font-weight: 600;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -9,9 +9,13 @@ import AnimalCard from "../../../../common/animalCard/AnimalCard";
 const RecentlyAdopted = () => {
   const { isLoading, sendRequest } = useHttp();
 
-  const [data, setData] = useState({ animals: [], amount: null });
+  const [data, setData] = useState({
+    animals: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
+    amount: null,
+  });
 
   const cardRef = useRef();
+  const sectionRef = useRef();
 
   const startFetching = (entries, observer) => {
     const [entry] = entries;
@@ -30,14 +34,13 @@ const RecentlyAdopted = () => {
   };
 
   useEffect(() => {
-    const section = document.querySelector("#section");
     const sectionObserver = new IntersectionObserver(startFetching, {
       root: null,
       threshold: 0,
       rootMargin: "0px",
     });
 
-    sectionObserver.observe(section);
+    sectionObserver.observe(sectionRef.current);
   }, []);
 
   useEffect(() => {
@@ -71,7 +74,7 @@ const RecentlyAdopted = () => {
   ));
 
   return (
-    <section className={styles.wrapper} id="section">
+    <section className={styles.wrapper} id="section" ref={sectionRef}>
       <h2 className={styles.header}>Ostatnio przyjęte</h2>
       <ul className={styles.list}>{animals}</ul>
     </section>

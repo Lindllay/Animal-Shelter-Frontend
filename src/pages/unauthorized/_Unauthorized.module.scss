@@ -1,10 +1,14 @@
 .unauthorized {
-	margin: 2rem;
+  margin: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-	h1 {
-		font-size: 6rem;
-	}
-	p {
-		font-size: 2rem;
-	}
+  p {
+    display: inline;
+    font-size: 2rem;
+    color: var(--color-brown-200);
+    text-align: center;
+  }
 }
