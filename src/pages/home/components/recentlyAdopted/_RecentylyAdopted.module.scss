@@ -1,3 +1,5 @@
+@import "../../../../utils/mixins";
+
 .wrapper {
   position: relative;
 
@@ -65,7 +67,6 @@
 
   grid-template-columns: repeat(auto-fit, 30rem);
   grid-auto-rows: 45rem;
-  // gap: 5%;
   min-height: 30rem;
 }
 
@@ -82,5 +83,21 @@
   }
   50% {
     rotate: 5deg;
+  }
+}
+
+@include respond(md) {
+  .list {
+    justify-content: center;
+
+    grid-template-columns: 35rem;
+    grid-auto-rows: 45rem;
+    min-height: 35rem;
+
+    gap: 3rem;
+  }
+
+  .wrapper::after {
+    display: none;
   }
 }

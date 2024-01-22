@@ -53,5 +53,10 @@ html {
   }
 }
 
-body {
+@include respond(md) {
+  :root {
+    --padding-page-inline: 4.8rem;
+
+    --margin-page-inline: 4.8rem;
+  }
 }

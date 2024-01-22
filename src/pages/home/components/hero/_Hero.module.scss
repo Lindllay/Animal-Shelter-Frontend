@@ -1,19 +1,27 @@
-.hero {
-	padding-inline: var(--padding-page-inline);
-	// padding-block: 12.5rem;
+@import "../../../../utils/mixins";
 
-	display: flex;
-	justify-content: space-between;
-	gap: 6.4rem;
-	margin-top: 12.5rem;
-	margin-bottom: 15rem;
-	margin-inline: auto;
-	max-width: var(--max-width);
+.hero {
+  padding-inline: var(--padding-page-inline);
+
+  display: flex;
+  justify-content: space-between;
+  gap: 6.4rem;
+  margin-top: 12.5rem;
+  margin-bottom: 15rem;
+  margin-inline: auto;
+  max-width: var(--max-width);
 }
 
 .img-container {
-	.image {
-		width: 100%;
-		max-width: 65rem;
-	}
+  .image {
+    width: 100%;
+    max-width: 65rem;
+  }
+}
+
+@include respond(md) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
 }
