@@ -2,7 +2,7 @@
   display: flex;
   position: absolute;
   height: 9.6rem;
-  right: 9.6rem;
+  right: var(--padding-page-inline);
   top: 0;
   translate: 0 -10rem;
   gap: 1rem;
