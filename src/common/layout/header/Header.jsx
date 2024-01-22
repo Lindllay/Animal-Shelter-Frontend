@@ -37,7 +37,8 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = "scroll";
+    document.body.style.overflowY = "scroll";
+    document.body.style.overflowX = "hidden";
   }, [isTabletOrMobile]);
 
   return (

@@ -11,41 +11,42 @@ import {
 } from "react-icons/pi";
 import { GoPeople } from "react-icons/go";
 import { SlMagnifier } from "react-icons/sl";
-import { IoCloseSharp } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
-import { Reveal, Fade, Rotate } from "react-awesome-reveal";
+import { Reveal, Rotate } from "react-awesome-reveal";
 
 const MobileNavigation = (props) => {
   const [isNavOpened, setIsNavOpened] = useState(false);
 
   const openNavHandler = () => {
     setIsNavOpened(true);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   };
   const closeNavHandler = () => {
     setIsNavOpened(false);
-    document.body.style.overflow = "scroll";
+    document.body.style.overflowY = "scroll";
   };
 
   return (
     <>
       <nav className={styles["btn-wrapper"]}>
-        <button className={styles["search-btn"]} onClick={props.activateSearch}>
-          <SlMagnifier className={styles["search-icon"]} />
-        </button>
+        {!isNavOpened && (
+          <button
+            className={styles["search-btn"]}
+            onClick={props.activateSearch}
+          >
+            <SlMagnifier className={styles["search-icon"]} />
+          </button>
+        )}
         {isNavOpened && (
           <Rotate triggerOnce>
             <GrClose
               onClick={closeNavHandler}
               className={styles["cross-icon"]}
               size="24"
-              color="#5a2306"
             />
           </Rotate>
         )}
-        {!isNavOpened && (
-          <GiHamburgerMenu onClick={openNavHandler} size="24" color="#5a2306" />
-        )}
+        {!isNavOpened && <GiHamburgerMenu onClick={openNavHandler} size="24" />}
       </nav>
 
       {isNavOpened && (
