@@ -23,8 +23,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 35rem;
-  height: 50rem;
+  width: 30rem;
+  height: 45rem;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border-radius: 2.5rem;
@@ -34,7 +34,7 @@
 
   background-color: white;
 
-  & > * {
+  & > *:not(.spinner) {
     animation: reveal 1s;
   }
 }

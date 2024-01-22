@@ -1,23 +1,26 @@
 .search-content {
   display: flex;
-  justify-content: end;
+  position: absolute;
+  height: 9.6rem;
+  right: 9.6rem;
+  top: 0;
+  translate: 0 -10rem;
+  gap: 1rem;
 }
 
 .picture {
-  position: absolute;
-  left: 13rem;
-  height: 8rem;
+  height: 6rem;
+  rotate: 180deg;
 
   img {
-    height: 100%;
-    width: 100%;
+    height: 6rem;
+    width: 8rem;
   }
 }
 
 .search-input {
-  width: 50rem !important;
-  height: 4rem;
-  align-self: flex-end;
+  width: 40vw !important;
+  align-self: center;
 
   & input {
     outline: none;

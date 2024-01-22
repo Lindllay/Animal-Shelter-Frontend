@@ -1,5 +1,4 @@
 import styles from "./_Unauthorized.module.scss";
-import { Link } from "react-router-dom";
 
 const Unauthorized = () => {
   return (

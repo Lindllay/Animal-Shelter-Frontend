@@ -57,6 +57,7 @@ const Contact = () => {
             center={[53.123402922476416, 23.086431311737158]}
             zoom={13}
             className={styles.map}
+            zoomControl={false}
           >
             <TileLayer
               attribution='<a href="https://www.openstreetmap.org/copyright"></a>contributors'

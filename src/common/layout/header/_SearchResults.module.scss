@@ -4,19 +4,20 @@
 
   position: absolute;
   right: var(--padding-page-inline);
-  top: 7rem;
-  width: 50rem;
+  top: 8rem;
+  width: 40vw;
   min-height: 7rem;
   max-height: 50rem;
   background-color: white;
   border: 0.5px solid var(--color-brown-200);
   border-top: 1px solid #bb917c54;
   border-bottom-left-radius: 2rem;
-  z-index: 1;
 
   overflow-y: auto;
 
   list-style: none;
+
+  translate: 0 -1rem;
 
   .spinner {
     height: 4rem;

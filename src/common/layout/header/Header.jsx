@@ -1,13 +1,21 @@
 import styles from "./_Header.module.scss";
 import Navigation from "./Navigation";
+import MobileNavigation from "./MobileNavigation";
+
 import logo from "../../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import Search from "./Search";
+import { breakpoints } from "../../../utils/config";
+import { useMediaQuery } from "react-responsive";
 
-const Header = (props) => {
+const Header = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const searchRef = useRef();
+
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width:${breakpoints.md}px)`,
+  });
 
   const activateSearchHandler = () => {
     setIsSearchActive(true);
@@ -28,15 +36,28 @@ const Header = (props) => {
     });
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = "scroll";
+  }, [isTabletOrMobile]);
+
   return (
     <header className={styles.header}>
       <Link className={styles["logo-img"]} to="/">
         <img src={logo} alt="logo" />
       </Link>
+
       <div
         className={`${styles.wrapper} ${isSearchActive ? styles.active : ""}`}
       >
-        <Navigation activateSearch={activateSearchHandler} />
+        {!isTabletOrMobile && (
+          <Navigation activateSearch={activateSearchHandler} />
+        )}
+        {isTabletOrMobile && (
+          <MobileNavigation
+            activateSearch={activateSearchHandler}
+            isTabletOrMobile
+          />
+        )}
         <Search searchRef={searchRef} />
       </div>
     </header>

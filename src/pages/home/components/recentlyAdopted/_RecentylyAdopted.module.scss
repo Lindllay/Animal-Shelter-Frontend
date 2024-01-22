@@ -2,7 +2,7 @@
   position: relative;
 
   padding-block: 15rem;
-  // margin-block: 15rem;
+  padding-inline: var(--padding-page-inline);
   overflow: hidden;
 }
 
@@ -61,12 +61,12 @@
 .list {
   display: grid;
   justify-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  grid-template-columns: repeat(auto-fit, 35rem);
-  grid-auto-rows: 50rem;
-  gap: 5rem;
-  min-height: 35rem;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-auto-rows: 45rem;
+  // gap: 5%;
+  min-height: 30rem;
 }
 
 .scaleUp {

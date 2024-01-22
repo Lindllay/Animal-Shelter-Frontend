@@ -21,29 +21,28 @@
 }
 
 .wrapper {
-  overflow: hidden;
-  height: 100%;
-
   > div {
-    translate: 0 6rem;
     transition: all 0.2s ease-out;
   }
 
-  > nav ul {
+  > nav {
     transition: all 0.2s ease-out;
+  }
 
-    translate: 0 3rem;
+  & div:first-child {
+    translate: 0 0rem;
+  }
+  & nav:first-child {
+    translate: 0 0rem;
   }
 }
 
 .wrapper.active {
-  overflow: hidden;
-
   > div {
-    translate: 0 -1rem;
+    translate: 0 0rem;
   }
 
-  > nav ul {
-    translate: 0 -5rem;
+  > nav {
+    translate: 0 -10rem;
   }
 }
