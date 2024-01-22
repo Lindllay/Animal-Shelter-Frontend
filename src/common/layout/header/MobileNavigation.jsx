@@ -11,8 +11,9 @@ import {
 } from "react-icons/pi";
 import { GoPeople } from "react-icons/go";
 import { SlMagnifier } from "react-icons/sl";
-import { ImCross } from "react-icons/im";
-import { Reveal, Fade } from "react-awesome-reveal";
+import { IoCloseSharp } from "react-icons/io5";
+import { GrClose } from "react-icons/gr";
+import { Reveal, Fade, Rotate } from "react-awesome-reveal";
 
 const MobileNavigation = (props) => {
   const [isNavOpened, setIsNavOpened] = useState(false);
@@ -32,20 +33,25 @@ const MobileNavigation = (props) => {
         <button className={styles["search-btn"]} onClick={props.activateSearch}>
           <SlMagnifier className={styles["search-icon"]} />
         </button>
-        <GiHamburgerMenu onClick={openNavHandler} size="24" color="#5a2306" />
+        {isNavOpened && (
+          <Rotate triggerOnce>
+            <GrClose
+              onClick={closeNavHandler}
+              className={styles["cross-icon"]}
+              size="24"
+              color="#5a2306"
+            />
+          </Rotate>
+        )}
+        {!isNavOpened && (
+          <GiHamburgerMenu onClick={openNavHandler} size="24" color="#5a2306" />
+        )}
       </nav>
 
       {isNavOpened && (
-        <nav className={styles.nav}>
+        <div className={styles.nav}>
           <Reveal triggerOnce cascade damping={0.05}>
             <ul className={styles.ul}>
-              <Fade delay={1000} triggerOnce>
-                <ImCross
-                  onClick={closeNavHandler}
-                  className={styles["cross-icon"]}
-                />
-              </Fade>
-
               <li>
                 <NavLink
                   to="/animals"
@@ -100,7 +106,7 @@ const MobileNavigation = (props) => {
               </li>
             </ul>
           </Reveal>
-        </nav>
+        </div>
       )}
     </>
   );
