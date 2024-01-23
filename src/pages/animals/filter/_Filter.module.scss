@@ -92,6 +92,9 @@
     display: grid;
     grid-template-columns: repeat(6, minmax(45px, 120px));
     grid-template-rows: repeat(5, 1fr);
+
+    background-size: cover;
+    background-position: center;
   }
   .age {
     grid-column: 1 / span 3;
@@ -140,6 +143,8 @@
     grid-template-rows: repeat(8, 1fr);
     padding: 2.4rem;
     row-gap: 1.5rem;
+
+    width: max(35rem, 100%);
   }
   .age {
     grid-column: 1 / span 2;
