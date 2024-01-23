@@ -90,11 +90,11 @@
   .list {
     justify-content: center;
 
-    grid-template-columns: 35rem;
-    grid-auto-rows: 45rem;
-    min-height: 35rem;
+    grid-template-columns: 45rem;
+    grid-auto-rows: 50rem;
+    min-height: 50rem;
 
-    gap: 3rem;
+    gap: 10rem;
   }
 
   .wrapper::after {

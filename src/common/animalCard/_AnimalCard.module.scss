@@ -1,3 +1,5 @@
+@import "../../utils/mixins";
+
 .li {
   list-style: none;
   position: relative;
@@ -73,6 +75,16 @@
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--color-brown-400);
+  }
+}
+
+@include respond(md) {
+  .card {
+    width: 40rem;
+    height: 55rem;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 2.5rem;
   }
 }
 
