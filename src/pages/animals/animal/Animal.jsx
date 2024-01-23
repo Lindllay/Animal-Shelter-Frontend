@@ -61,10 +61,10 @@ const Animal = () => {
             <span className={styles.label}>Waga:</span>
             <span className={styles.value}>{data.weight}kg</span>
           </li>
-          <li>
+          {/* <li>
             <span className={styles.label}>Przyjęty:</span>
             <span className={styles.value}>{data.adoptedAt.split("T")[0]}</span>
-          </li>
+          </li> */}
         </ul>
         <div className={styles.description}>
           {data.species === "dog"
@@ -77,8 +77,23 @@ const Animal = () => {
 								pełen energii i gotów na każdą przygodę, ale równocześnie
 								potrafi być spokojnym i posłusznym psem. Będzie idealnym
 								dodatkiem do Twojej rodziny i sprawi, że każdy dzień będzie
-								pełen radości i miłości.`
-            : `Ten niezwykły kot o imieniu ${data.name} to prawdziwy klejnot schroniska. Jego jedwabista sierść w odcieniach czarnego marmuru zdobi jego harmonijne ciało, a hipnotyzujące zielone oczy sprawiają, że trudno oderwać od niego wzrok. ${data.name} to nie tylko piękny, ale także inteligentny i przyjazny kot, który uwielbia zabawy i długie sesje przytulania. Jego łagodny charakter sprawia, że jest doskonałym towarzyszem dla rodzin i singli, gotowym dać mnóstwo miłości i radości. Jeśli szukasz wyjątkowego kota, ${data.name} jest idealnym wyborem!`}
+								pełen radości i miłości. W schronisku przebywa 
+                od ${data.adoptedAt.split("T")[0]}`
+            : `Ten niezwykły kot o imieniu ${
+                data.name
+              } to prawdziwy klejnot schroniska. 
+            Jego jedwabista sierść w odcieniach czarnego marmuru zdobi jego harmonijne ciało, 
+            a hipnotyzujące zielone oczy sprawiają, że trudno oderwać od niego wzrok. 
+            ${
+              data.name
+            } to nie tylko piękny, ale także inteligentny i przyjazny kot, 
+            który uwielbia zabawy i długie sesje przytulania. Jego łagodny charakter sprawia, 
+            że jest doskonałym towarzyszem dla rodzin i singli, gotowym dać mnóstwo miłości i 
+            radości. Jeśli szukasz wyjątkowego kota, ${
+              data.name
+            } jest idealnym wyborem! W schronisku przebywa od ${
+                data.adoptedAt.split("T")[0]
+              }`}
         </div>
         <PreviousPageBtn />
       </div>
