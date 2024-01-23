@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .filter {
   padding: 4.8rem;
   margin-bottom: 6.4rem;
@@ -7,7 +9,6 @@
 
   background-image: linear-gradient(#ffffffd2, #ffffffc2),
     url(../../../assets/filter-background.jpg);
-  // background-position: 0 20%;
   background-size: 100%;
   background-position: 0 55%;
 
@@ -84,4 +85,100 @@
 
   grid-column: 10 / span 3;
   grid-row: 2;
+}
+
+@include respond(md) {
+  .filter {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(45px, 120px));
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .age {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+  }
+  .weight {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+  .breed {
+    grid-column: 4 / span 3;
+  }
+
+  .adoptedAt {
+    grid-column: 4 / span 3;
+    grid-row: 2;
+  }
+  .dog {
+    grid-row: 3;
+    grid-column: 1 / span 3;
+  }
+
+  .cat {
+    grid-row: 3;
+    grid-column: 4 / span 3;
+  }
+
+  .name {
+    grid-row: 4;
+    grid-column: 1 / span 3;
+  }
+  .gender {
+    grid-row: 4;
+    grid-column: 4 / span 2;
+  }
+  .submit-btn {
+    grid-row: 5;
+    grid-column: 1 / span 6;
+  }
+}
+
+@include respond(sm) {
+  .filter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(45px, 120px));
+    grid-template-rows: repeat(8, 1fr);
+
+    row-gap: 1rem;
+    column-gap: 2rem;
+  }
+  .age {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  .weight {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+  .breed {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+
+  .adoptedAt {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+  .dog {
+    grid-row: 5;
+    grid-column: 1 / span 1;
+  }
+
+  .cat {
+    grid-row: 5;
+    grid-column: 2 / span 1;
+  }
+
+  .name {
+    grid-row: 6;
+    grid-column: 1 / span 1;
+  }
+  .gender {
+    grid-row: 6;
+    grid-column: 2 / span 1;
+  }
+  .submit-btn {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+  }
 }
