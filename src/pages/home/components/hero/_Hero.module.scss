@@ -25,3 +25,10 @@
     align-items: center;
   }
 }
+@include respond(sm) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding-inline: unset;
+  }
+}

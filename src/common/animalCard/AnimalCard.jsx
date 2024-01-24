@@ -8,6 +8,11 @@ const AnimalCard = forwardRef((props, ref) => {
   const { name, age, breed, gender, imageSrc, weight } = props.data;
   const { isLoading } = props;
 
+  // const imageSrcc = imageSrc
+  //   .split("upload/")
+  //   .join("upload/w_400,f_auto,q_auto/");
+  // console.log(imageSrcc);
+
   if (isLoading)
     return (
       <li className={styles.li}>

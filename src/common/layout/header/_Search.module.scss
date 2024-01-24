@@ -49,3 +49,12 @@
     display: none;
   }
 }
+
+@media (max-width: 425px) {
+  .search-content {
+    width: calc(100% - 9.6rem);
+  }
+  .search-input {
+    width: 100% !important;
+  }
+}
