@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .search-content {
   display: flex;
   position: absolute;
@@ -32,4 +34,18 @@
   border-radius: 2rem 2rem 0 0;
   border-bottom: none;
   outline: none;
+}
+
+@include respond(md) {
+  .search-input {
+    width: 45rem !important;
+  }
+}
+@include respond(sm) {
+  .search-input {
+    width: 35rem !important;
+  }
+  .picture {
+    display: none;
+  }
 }

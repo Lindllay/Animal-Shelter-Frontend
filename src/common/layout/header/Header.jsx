@@ -43,7 +43,14 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link className={styles["logo-img"]} to="/">
+      <Link
+        className={
+          isSearchActive
+            ? `${styles["logo-img"]} ${styles.hidden}`
+            : styles["logo-img"]
+        }
+        to="/"
+      >
         <img src={logo} alt="logo" />
       </Link>
 

@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .list {
   display: none;
   flex-direction: column;
@@ -95,4 +97,31 @@
   margin-top: 2.5rem;
   font-size: 1.4rem;
   color: var(--color-brown-200);
+}
+
+@include respond(md) {
+  .list {
+    width: 45rem !important;
+  }
+}
+@include respond(sm) {
+  .list {
+    width: 35rem !important;
+  }
+  .info {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 2rem;
+    align-items: center;
+
+    .data {
+      gap: 0;
+    }
+  }
+
+  .picture {
+  }
+  .data {
+    flex-direction: column;
+  }
 }

@@ -1,3 +1,5 @@
+@import "../../utils/mixins";
+
 .section {
   padding-inline: var(--padding-page-inline);
   padding-block: 3.2rem;
@@ -49,5 +51,20 @@
   }
   .picture {
     order: 1;
+  }
+}
+
+@include respond(md) {
+  .article {
+    flex-direction: column;
+  }
+
+  .article:nth-child(odd) {
+    div {
+      order: unset;
+    }
+    .picture {
+      order: unset;
+    }
   }
 }
