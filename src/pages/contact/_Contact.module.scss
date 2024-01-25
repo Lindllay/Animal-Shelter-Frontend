@@ -1,3 +1,5 @@
+@import "../../utils/mixins";
+
 .section {
   padding-inline: var(--padding-page-inline);
   padding-block: 3.2rem;
@@ -39,14 +41,35 @@
 
 .map {
   flex: 2;
-
-  height: 100vh;
+  height: 60rem;
   max-height: 100%;
-  width: 30rem;
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
 
   // .leaflet-top,
   // .leaflet-left {
   //   z-index: 9;
   // }
+}
+
+@include respond(md) {
+  .wrapper {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  .contact {
+    border-right: unset;
+    flex: unset;
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+
+  .h2 {
+    font-size: 2.8rem;
+  }
+  .map {
+    flex: unset;
+  }
 }

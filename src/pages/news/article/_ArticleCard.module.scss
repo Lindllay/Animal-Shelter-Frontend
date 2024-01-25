@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .article {
   display: flex;
   height: 20vw;
@@ -64,5 +66,35 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@include respond(md) {
+  .article {
+    height: 30rem;
+  }
+  .picture {
+    flex: 0.8;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .article {
+    display: flex;
+    flex-direction: column;
+    height: 60rem;
+  }
+
+  .content {
+    flex: 1;
+  }
+  .picture {
+    flex: 2;
   }
 }

@@ -6,30 +6,22 @@ import { url } from "../../utils/config";
 import LoadingSpinner from "../../common/UI/LoadingSpinner";
 
 const News = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ articles: [] });
   const { sendRequest, isLoading } = useHttp();
 
   const fetchArticlesHandler = () => {
-    sendRequest({ url: `${url}api/v1/articles`, method: "get" }, transformData);
-  };
-
-  const transformData = (data) => {
-    const transformedData = data.articles.map((article) => ({
-      ...article,
-      id: article._id,
-    }));
-    setData(transformedData);
+    sendRequest({ url: `${url}api/v1/articles`, method: "get" }, setData);
   };
 
   useEffect(() => {
     fetchArticlesHandler();
   }, []);
 
-  const articles = data.map((articlesData) => (
+  const articles = data.articles.map((articlesData) => (
     <ArticleCard
       data={articlesData}
-      key={articlesData.id}
-      to={articlesData.id}
+      key={articlesData._id}
+      to={articlesData._id}
     />
   ));
 

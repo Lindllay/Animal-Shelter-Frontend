@@ -101,28 +101,32 @@
 
 @include respond(sm) {
   .wrapper {
-    margin-top: 10rem;
+    margin-top: 15rem;
     margin-bottom: 5rem;
 
     gap: 3.2rem;
   }
   .h2 {
-    font-size: 4.8rem;
-    line-height: 6rem;
-    margin-bottom: 0.5rem;
+    font-size: 7rem;
+    line-height: 7rem;
+    margin-bottom: 3.2rem;
+    word-spacing: 25rem;
+    text-align: center;
+    translate: -4rem 0rem;
 
     picture {
       position: absolute;
-      bottom: -35px;
+      bottom: -30px;
 
       img {
-        width: 40px;
+        width: 80px;
       }
     }
   }
   .h3 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     margin-bottom: 3.2rem;
+    text-align: center;
   }
 
   .picture {

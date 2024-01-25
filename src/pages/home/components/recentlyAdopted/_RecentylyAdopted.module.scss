@@ -96,6 +96,12 @@
   }
   .wrapper::before {
     background-size: 100%;
+
+    top: 0px;
+    right: 0px;
+    left: -50px;
+    bottom: 0px;
+    opacity: 0.1;
   }
   .list {
     justify-content: center;
