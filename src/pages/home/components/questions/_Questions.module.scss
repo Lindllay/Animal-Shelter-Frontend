@@ -98,3 +98,40 @@
     margin-top: 2rem;
   }
 }
+
+@include respond(sm) {
+  .wrapper {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+
+    gap: 3.2rem;
+  }
+  .h2 {
+    font-size: 4.8rem;
+    line-height: 6rem;
+    margin-bottom: 0.5rem;
+
+    picture {
+      position: absolute;
+      bottom: -35px;
+
+      img {
+        width: 40px;
+      }
+    }
+  }
+  .h3 {
+    font-size: 1.8rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .picture {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 60%;
+      height: 60%;
+      // transform: scaleX(-1);
+    }
+  }
+}

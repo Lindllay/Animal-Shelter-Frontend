@@ -67,12 +67,12 @@
   gap: 0.5rem;
 
   p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: black;
   }
 
   .name span {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-brown-400);
   }
@@ -85,6 +85,15 @@
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     border-radius: 2.5rem;
+  }
+  .content {
+    p {
+      font-size: 1.8rem;
+    }
+
+    .name span {
+      font-size: 2rem;
+    }
   }
 }
 

@@ -87,6 +87,16 @@
 }
 
 @include respond(md) {
+  .wrapper {
+    padding-block: 7.5rem;
+    padding-inline: var(--padding-page-inline);
+  }
+  .wrapper::after {
+    display: none;
+  }
+  .wrapper::before {
+    background-size: 100%;
+  }
   .list {
     justify-content: center;
 
@@ -95,9 +105,5 @@
     min-height: 50rem;
 
     gap: 10rem;
-  }
-
-  .wrapper::after {
-    display: none;
   }
 }
