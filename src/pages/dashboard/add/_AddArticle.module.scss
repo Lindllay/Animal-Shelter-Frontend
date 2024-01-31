@@ -2,7 +2,6 @@
 
 .form-wrapper {
   width: 100%;
-  z-index: 99;
 
   form {
     width: 100%;
@@ -11,6 +10,7 @@
     flex-direction: column;
     gap: 3rem;
     z-index: 0;
+    z-index: 99;
 
     .btn {
       border-radius: 25rem;

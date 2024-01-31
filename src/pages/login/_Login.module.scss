@@ -1,6 +1,14 @@
+@import "../../utils/mixins";
+
 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  min-height: 45rem;
+}
+.login {
   max-width: 40rem;
-  margin: 9.6rem auto;
   padding: 3.2rem;
 
   box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.05);
@@ -97,4 +105,10 @@
   position: absolute;
 
   translate: -7rem;
+}
+
+@include respond(md) {
+  .wrapper {
+    margin: 0 auto;
+  }
 }
