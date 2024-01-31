@@ -1,6 +1,8 @@
+@import "../../../utils/mixins";
+
 .form-wrapper {
   width: 100%;
-  z-index: 99999;
+  z-index: 99;
 
   form {
     width: 100%;
@@ -36,9 +38,23 @@
 
     .form-row {
       display: flex;
+      gap: 1rem;
 
       & div:first-of-type {
         width: 50rem;
+      }
+    }
+  }
+}
+
+@include respond(md) {
+  .form-wrapper {
+    form {
+      .form-row {
+        flex-direction: column;
+        & div:first-of-type {
+          width: 100%;
+        }
       }
     }
   }

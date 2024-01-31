@@ -3,9 +3,15 @@ import formatAge from "../../../utils/formatAge";
 import formatDate from "../../../utils/formatDate";
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
 import { FaTrash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
+import { breakpoints } from "../../../utils/config";
 
 const Animals = (props) => {
   const { data, isLoading } = props;
+
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width:${breakpoints.md}px)`,
+  });
 
   const animalsList = data.map((animal, index) => (
     <li className={styles.row} key={animal._id}>
@@ -27,11 +33,11 @@ const Animals = (props) => {
       <span className={styles.value}>{`${animal.age} ${formatAge(
         animal.age
       )}`}</span>
-      <span className={styles.value}>{`${animal.weight}kg`}</span>
+      {/* <span className={styles.value}>{`${animal.weight}kg`}</span>
       <span className={styles.value}>
         {animal.gender === "male" ? "Samiec" : "Samica"}
       </span>
-      <span className={styles.value}>{formatDate(animal.adoptedAt)}</span>
+      <span className={styles.value}>{formatDate(animal.adoptedAt)}</span> */}
       <div className={styles.controllers}>
         <button>
           <FaTrash
@@ -67,9 +73,9 @@ const Animals = (props) => {
           <span className={styles.name}></span>
           <span className={styles.breed}>Rasa</span>
           <span className={styles.age}>Wiek</span>
-          <span className={styles.weight}>Waga</span>
+          {/* <span className={styles.weight}>Waga</span>
           <span className={styles.gender}>Płeć</span>
-          <span className={styles.adoptedAt}>Data przyjęcia</span>
+          <span className={styles.adoptedAt}>Data przyjęcia</span> */}
         </div>
         {isLoading && loadingScreen}
         {!isLoading && <ul className={styles.list}>{animalsList}</ul>}

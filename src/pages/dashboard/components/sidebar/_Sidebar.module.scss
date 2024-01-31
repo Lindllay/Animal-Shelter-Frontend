@@ -1,3 +1,5 @@
+@import "../../../../utils/mixins";
+
 .sidebar {
   position: relative;
   min-width: 25rem;
@@ -82,4 +84,76 @@
   width: 19.5rem;
   pointer-events: all;
   visibility: unset;
+}
+
+.mobile-sidebar {
+  position: relative;
+  min-width: 6rem;
+  width: 6rem;
+  left: 0rem;
+
+  background-color: rgb(240, 240, 240);
+  transition: all 0.15s ease-in;
+
+  z-index: 99;
+
+  .sub-menu {
+    width: 0rem;
+    height: 100%;
+    top: 2rem;
+    position: absolute;
+    background-color: #30170c;
+    border-radius: 1rem;
+
+    right: 0rem;
+    transition: all 0.2s ease-out;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 999;
+  }
+
+  .li:hover .sub-menu {
+    width: 8rem;
+    pointer-events: all;
+    visibility: unset;
+  }
+}
+
+.sidebar-open-icon {
+  display: none;
+}
+
+@include respond(md) {
+  .sidebar {
+    position: absolute;
+    height: calc(100% + 1rem);
+    top: 0.3rem;
+
+    left: -25rem;
+
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.15);
+    transition: all 0.15s ease-in;
+    z-index: 9999999;
+
+    overflow: hidden;
+  }
+  .sidebar-open-icon {
+    display: block;
+    position: fixed;
+    height: 3rem;
+    width: 3em;
+    color: rgba(0, 0, 0, 0.75);
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 999;
+  }
+
+  .sidebar.active {
+    left: 0em;
+  }
 }

@@ -1,12 +1,18 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend } from "recharts";
 import styles from "./_StatisticsPage.module.scss";
 import { Select } from "../../../common/form";
+import { useMediaQuery } from "react-responsive";
+import { breakpoints } from "../../../utils/config";
 
 const StatisticsPage = () => {
   const [shelter, setShelter] = useState([]);
   const [adopted, setAdopted] = useState([]);
   const [temporary, setTemporary] = useState([]);
+
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width:${breakpoints.md}px)`,
+  });
 
   const generateNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -57,7 +63,14 @@ const StatisticsPage = () => {
 
   return (
     <>
-      <Select className={styles.select} onChange={onInputChange}>
+      <Select
+        className={
+          !isTabletOrMobile
+            ? styles.select
+            : `${styles.select} ${styles.mobile}`
+        }
+        onChange={onInputChange}
+      >
         <option>Sierpień 2023</option>
         <option>Lipiec 2023</option>
         <option>Czerwiec 2023</option>
@@ -67,17 +80,17 @@ const StatisticsPage = () => {
         <option>Luty 2023</option>
         <option>Styczeń 2023</option>
       </Select>
-      <ResponsiveContainer width="100%" height={500}>
+      <ResponsiveContainer width="100%" height={!isTabletOrMobile ? 500 : 1200}>
         <PieChart margin={{ top: 50, right: 30, left: 20, bottom: 55 }}>
           <Legend verticalAlign="bottom" iconSize={30} />
           <Pie
             dataKey="value"
             isAnimationActive={true}
             data={shelter}
-            cx="20%"
-            cy="50%"
-            outerRadius={100}
-            innerRadius={50}
+            cx={!isTabletOrMobile ? "15%" : "50%"}
+            cy={!isTabletOrMobile ? "50%" : "22.5%"}
+            outerRadius={!isTabletOrMobile ? 100 : 125}
+            innerRadius={!isTabletOrMobile ? 50 : 75}
             fill="#8884d8"
             label
             fontSize={18}
@@ -86,10 +99,10 @@ const StatisticsPage = () => {
             dataKey="value"
             isAnimationActive={true}
             data={adopted}
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            innerRadius={50}
+            cx={!isTabletOrMobile ? "50%" : "50%"}
+            cy={!isTabletOrMobile ? "50%" : "52.5%"}
+            outerRadius={!isTabletOrMobile ? 100 : 125}
+            innerRadius={!isTabletOrMobile ? 50 : 75}
             fill="#123456"
             label
             fontSize={18}
@@ -99,10 +112,10 @@ const StatisticsPage = () => {
             dataKey="value"
             isAnimationActive={true}
             data={temporary}
-            cx="80%"
-            cy="50%"
-            outerRadius={100}
-            innerRadius={50}
+            cx={!isTabletOrMobile ? "85%" : "50%"}
+            cy={!isTabletOrMobile ? "50%" : "82.5%"}
+            outerRadius={!isTabletOrMobile ? 100 : 125}
+            innerRadius={!isTabletOrMobile ? 50 : 75}
             fill="#123456"
             fontSize={18}
           />

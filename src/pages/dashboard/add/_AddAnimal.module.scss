@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .form-wrapper {
   display: flex;
   justify-content: center;
@@ -66,4 +68,11 @@
 .spinner {
   position: absolute;
   translate: -7rem;
+}
+
+@include respond(md) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

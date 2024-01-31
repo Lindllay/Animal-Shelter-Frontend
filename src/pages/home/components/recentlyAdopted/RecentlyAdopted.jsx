@@ -14,8 +14,6 @@ const RecentlyAdopted = () => {
     amount: null,
   });
 
-  console.log(data);
-
   const cardRef = useRef();
   const sectionRef = useRef();
 

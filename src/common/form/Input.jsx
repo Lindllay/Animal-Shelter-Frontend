@@ -17,6 +17,7 @@ const Input = React.forwardRef((props, ref) => {
           onChange={props.onChange}
           onFocus={props.onFocus}
           onBlur={props.onBlur}
+          onClick={props.onClick}
           onMouseUp={props.onMouseUp}
           ref={ref}
           name={props.name}

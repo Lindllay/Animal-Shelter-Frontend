@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   min-height: calc(100vh - 9.6rem);
+  position: relative;
 }
 
 .spinner {

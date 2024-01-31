@@ -3,6 +3,12 @@
   width: 20rem;
   position: absolute;
   left: 27rem;
-  top: 12rem;
-  z-index: 99999;
+  top: 3rem;
+  z-index: 99;
+}
+
+.select.mobile {
+  left: unset;
+  right: 2rem;
+  top: 7rem;
 }
