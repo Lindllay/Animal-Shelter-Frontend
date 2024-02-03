@@ -33,7 +33,7 @@ const Dashboard = () => {
       </div>
     );
 
-  if (!isAuthenticated && !isFetched)
+  if (!isFetched)
     return (
       <div className={styles.wrapper}>
         <LoadingSpinner className={styles.spinner} />

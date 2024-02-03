@@ -10,7 +10,8 @@
 .overlay {
   background-color: white;
   min-height: 10rem;
-  min-width: 30vw;
+  width: calc(100% - 9.6rem);
+  max-width: 50rem;
 
   position: fixed;
   top: 50%;
