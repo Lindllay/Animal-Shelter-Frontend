@@ -1,3 +1,5 @@
+@import "../../../utils/mixins";
+
 .list {
   list-style: none;
   display: flex;
@@ -18,7 +20,7 @@
 
   border-radius: 1rem;
 
-  grid-template-columns: 3rem 15rem repeat(2, 1fr) 5rem;
+  grid-template-columns: 3rem 15rem repeat(5, 1fr) 5rem;
 
   font-size: 1.6rem;
   font-weight: 300;
@@ -115,4 +117,71 @@ div.row {
   height: 4rem;
   width: 4rem;
   border-top: 3px solid #57341b; /* Blue */
+}
+
+@include respond(sm) {
+  .list {
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+
+    height: 30rem;
+  }
+  .number {
+    grid-row: 1 / span 2;
+  }
+
+  .main {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    justify-self: center;
+
+    .picture {
+      grid-row: 1 / span 2;
+    }
+    .name {
+      grid-row: 1;
+    }
+    .species {
+      grid-row: 2;
+    }
+  }
+
+  .weight {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .gender {
+    grid-row: 5;
+    grid-column: 1;
+  }
+
+  .breed {
+    grid-row: 6;
+    grid-column: 1;
+  }
+
+  .age {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .adoptedAt {
+    grid-row: 7;
+    grid-column: 1;
+  }
+
+  .controllers {
+    grid-row: 8;
+    grid-column: 1;
+    margin-top: 2rem;
+  }
 }
