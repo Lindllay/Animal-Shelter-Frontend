@@ -22,6 +22,7 @@ const Input = React.forwardRef((props, ref) => {
           ref={ref}
           name={props.name}
           placeholder={props.placeholder}
+          title={props.title}
         />
         {props.type !== "file" && props.error && props.touched && (
           <p className={styles["error-message"]}>{props.error}</p>

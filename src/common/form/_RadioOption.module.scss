@@ -1,12 +1,13 @@
 .option {
-	font-size: 1.5rem;
-	display: flex;
-	gap: 0.4rem;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.4rem;
 
-	label {
-		user-select: none;
-	}
-	input {
-		accent-color: var(--color-brown-400);
-	}
+  label {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  input {
+    accent-color: var(--color-brown-400);
+  }
 }

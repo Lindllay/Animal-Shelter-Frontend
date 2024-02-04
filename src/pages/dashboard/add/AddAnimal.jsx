@@ -125,6 +125,8 @@ const AddAnimal = () => {
           onChange={handleChange}
           value={values.adoptedAt}
           className={styles.date}
+          title="Data adopcji"
+          placeholder=""
         ></Input>
         <Textarea
           id="description"

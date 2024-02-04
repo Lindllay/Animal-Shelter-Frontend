@@ -5,13 +5,8 @@ import formatAge from "../../utils/formatAge.jsx";
 import { forwardRef } from "react";
 
 const AnimalCard = forwardRef((props, ref) => {
-  const { name, age, breed, gender, imageSrc, weight } = props.data;
+  const { name, age, breed, gender, imageSrc, weight, species } = props.data;
   const { isLoading } = props;
-
-  // const imageSrcc = imageSrc
-  //   .split("upload/")
-  //   .join("upload/w_400,f_auto,q_auto/");
-  // console.log(imageSrcc);
 
   if (isLoading)
     return (
@@ -26,7 +21,11 @@ const AnimalCard = forwardRef((props, ref) => {
       <li className={styles.li}>
         <Link className={styles.card} to={props.to} ref={ref}>
           <div className={styles["image-wrapper"]}>
-            <img src={imageSrc} className={styles.image}></img>
+            <img
+              src={imageSrc}
+              className={styles.image}
+              title={`${species} image`}
+            ></img>
           </div>
           <div className={styles.content}>
             <p className={styles.name}>

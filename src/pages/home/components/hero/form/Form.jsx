@@ -74,6 +74,7 @@ const Form = () => {
         <Select
           id="age"
           name="age"
+          title="Wiek"
           onChange={onInputChange}
           value={filters.age}
         >

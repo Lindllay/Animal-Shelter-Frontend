@@ -11,6 +11,7 @@ const Select = (props) => {
       className={classes}
       onChange={props.onChange}
       value={props.value}
+      title={props.title}
     >
       {props.children}
     </select>

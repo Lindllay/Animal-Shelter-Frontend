@@ -13,8 +13,6 @@ const Animals = (props) => {
     query: `(max-width:${breakpoints.sm}px)`,
   });
 
-  console.log(isMobile);
-
   const animalsList = data.map((animal, index) => (
     <li className={styles.row} key={animal._id}>
       {/* <span className={styles.number}>{index + 1}</span> */}

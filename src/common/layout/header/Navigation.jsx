@@ -59,6 +59,7 @@ const Navigation = (props) => {
           <button
             className={styles["search-btn"]}
             onClick={props.activateSearch}
+            title="Szukaj"
           >
             <SlMagnifier className={styles["search-icon"]} />
           </button>
