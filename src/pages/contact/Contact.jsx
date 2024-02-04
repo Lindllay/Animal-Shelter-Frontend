@@ -12,7 +12,7 @@ const Contact = () => {
           <div className={styles.contact}>
             <div>
               <h2 className={styles.h2}>Dane teleadresowe</h2>
-              <p> Schronisko Lorem Ipsum im. Lorema Ipsuma</p>
+              <p> Schronisko Przytulisko im. Lorema Ipsuma</p>
               <p> Jednostka budżetowa m. Białystok ul.Szkolna 17</p>
               <p> 15-640 Białystok, Polska</p>
               <p> tel.: +48 000000000</p>

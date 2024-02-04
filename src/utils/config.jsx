@@ -8,7 +8,7 @@ const breakpoints = {
   md: 56.25 * em,
   lg: 65 * em,
   xl: 75 * em,
-  doubleXl: 112.5 * em,
+  doubleXl: 100 * em,
 };
 
 export { url, breakpoints };

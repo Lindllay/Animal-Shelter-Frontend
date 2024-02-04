@@ -7,10 +7,10 @@ const About = () => {
       <section className={styles.section}>
         <h1 className={styles.h1}>Informacje podstawowe</h1>
         <p className={styles.paragraph}>
-          Schronisko dla Zwierząt w Białymstoku jest jednostką budżetową Gminy
-          Białystok. Obszar działania placówki obejmuje teren Miasta Białystok.
-          Organizacyjnie jednostka jest podporządkowana Wydziałowi Ochrony
-          Środowiska i Rolnictwa Urzędu Miasta Białystok.
+          Schronisko dla Zwierząt Przytulisko w Białymstoku jest jednostką
+          budżetową Gminy Białystok. Obszar działania placówki obejmuje teren
+          Miasta Białystok. Organizacyjnie jednostka jest podporządkowana
+          Wydziałowi Ochrony Środowiska i Rolnictwa Urzędu Miasta Białystok.
         </p>
         <h3 className={styles.h3}>Adopcje</h3>
         <p className={styles.paragraph}>
