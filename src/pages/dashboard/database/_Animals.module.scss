@@ -121,8 +121,8 @@ div.row {
 
 @include respond(sm) {
   .list {
-    max-width: 35rem;
-    margin: 0 auto;
+    // max-width: 35rem;
+    // margin: 0 auto;
   }
   .row {
     grid-template-columns: 1fr;

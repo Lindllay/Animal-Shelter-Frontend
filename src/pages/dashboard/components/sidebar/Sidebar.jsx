@@ -12,6 +12,7 @@ import {
   FaNewspaper,
 } from "react-icons/fa6";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { IoMdArrowDropright } from "react-icons/io";
 
 import { useEffect, useRef, useState } from "react";
 import useAuth from "../../../../hooks/useAuth";
@@ -70,9 +71,10 @@ const Sidebar = () => {
         <nav className={styles.nav}>
           <ul className={`${styles.ul} `}>
             <li className={styles.li} ref={addBtnRef}>
-              <SidebarBtn subpages to="add">
+              <div className={styles["btn-add"]}>
                 <FaCirclePlus className={styles["btn-icon"]} /> Dodaj
-              </SidebarBtn>
+                <IoMdArrowDropright className={styles["icon-arrow"]} />
+              </div>
               <div className={styles["sub-menu"]} ref={subMenuRef}>
                 <SidebarBtnInner to="add/animal">
                   <FaPaw className={styles["btn-icon--inner"]} />

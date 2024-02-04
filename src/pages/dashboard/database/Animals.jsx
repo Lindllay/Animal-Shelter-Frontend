@@ -31,7 +31,9 @@ const Animals = (props) => {
         </span>
       </div>
 
-      <span className={styles.breed}>{animal.breed}</span>
+      <span className={styles.breed}>
+        {isMobile ? `Rasa: ${animal.breed}` : animal.breed}
+      </span>
       <span className={styles.age}>
         {isMobile
           ? `Wiek: ${animal.age} ${formatAge(animal.age)}`

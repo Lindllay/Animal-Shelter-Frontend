@@ -42,6 +42,11 @@
 
       & div:first-of-type {
         width: 50rem;
+
+        input {
+          border-radius: 1rem;
+          padding: unset;
+        }
       }
     }
   }
@@ -54,6 +59,9 @@
         flex-direction: column;
         & div:first-of-type {
           width: 100%;
+          input {
+            padding-bottom: 1rem;
+          }
         }
       }
     }

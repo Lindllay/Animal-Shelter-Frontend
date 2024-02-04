@@ -28,6 +28,29 @@
   display: flex;
 }
 
+.btn-add {
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  position: relative;
+  border-radius: 1rem;
+
+  &:hover svg {
+    scale: 1.1;
+  }
+}
+
+.icon-arrow {
+  margin-left: auto;
+}
+
 .btn-icon {
   height: 2.5rem;
   width: 2.5rem;
