@@ -9,7 +9,7 @@ import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [values, setValues] = useState({ email: "", password: "" });
-  const [isLoading, setIsLoading] = useState({ admin: true, test: true });
+  const [isLoading, setIsLoading] = useState({ admin: false, test: false });
   const [error, setError] = useState("");
   const { isAuthenticated, setRole, logout, role } = useAuth();
 
