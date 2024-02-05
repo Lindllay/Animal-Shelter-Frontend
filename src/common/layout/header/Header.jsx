@@ -2,7 +2,7 @@ import styles from "./_Header.module.scss";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
 
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo.webp";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import Search from "./Search";
