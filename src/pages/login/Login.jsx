@@ -9,14 +9,14 @@ import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [values, setValues] = useState({ email: "", password: "" });
-  const [isLoading, setIsLoading] = useState({ admin: false, test: false });
+  const [isLoading, setIsLoading] = useState({ admin: true, test: true });
   const [error, setError] = useState("");
   const { isAuthenticated, setRole, logout, role } = useAuth();
 
   const navigate = useNavigate();
 
   const navigateDashboard = () => {
-    navigate("/dashboard/add/animal");
+    navigate("/dashboard/base");
   };
 
   const handleChange = (e) => {
