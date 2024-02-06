@@ -3,8 +3,7 @@
 <p>Live: https://animal-shelter-f9h0.onrender.com/</p>
 
 
-<h4>This project was created to consolidate skills in the MERN stack. It is an implementation of an animal shelter website with access to an administration panel to manage the content.
-The graphic design was designed independently. Layout is optimalized for the app depending on device's screen size</h4>
+<h4>This project was created to consolidate coding skills using the MERN stack. It is an implementation of an animal shelter website with access to the administration panel to manage the content.</h4>
 
 <h4>Features from the user side:</h4>
 <ul>
@@ -26,6 +25,7 @@ The graphic design was designed independently. Layout is optimalized for the app
 <li>Keep track of logged user, even after refreshing the browser</li>
 </ul>
 
+<h5>The graphic design was designed independently. Layout is optimalized for the app depending on device's screen size</h5>
 
 Built with:
 <strong> MERN stack, SCSS (CSS modules), formik, Recharts, , Figma</strong>
