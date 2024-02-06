@@ -31,3 +31,14 @@ Built with:
 <strong> MERN stack, SCSS (CSS modules), formik, Recharts, , Figma</strong>
 
 <h2>Screenshots</h2>
+
+<div align="center">
+<h3>Homepage</h3>
+<a href="https://iili.io/J12DVa9.png"><img src="https://iili.io/J12DVa9.png" alt="" border="0" ></a><br>
+<h3>Category Page</h3>
+<a href="https://freeimage.host/i/H0tdnVe"><img src="https://iili.io/H0tdnVe.md.png" alt="H0tdnVe.md.png" border="0" ></a><br>
+<h3>Details Page</h3>
+<a href="https://freeimage.host/i/H0t308v"><img src="https://iili.io/H0t308v.md.png" alt="H0t308v.md.png" border="0" ></a><br>
+<h3>Checkout</h3>
+<a href="https://freeimage.host/i/H0tFoiX"><img src="https://iili.io/H0tFoiX.md.png" alt="H0tFoiX.md.png" border="0" ></a>
+</div>111
