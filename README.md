@@ -2,6 +2,11 @@
 <h3>Multi-page Animal Shelter website</h3>
 <p>Live: https://animal-shelter-f9h0.onrender.com/</p>
 
+
+${\textsf{\color{red}Since the server is hosted by render.com and uses the free instance type,}}$
+${\textsf{\color{red}Render will spin down the service after 15 minutes of inactivity}}$
+${\textsf{\color{red}and spin the service back up (after 30-60 seconds) whenever it next receives a request to process.}}$
+
 <h4>This project was created to consolidate coding skills using the MERN stack. It is an implementation of an animal shelter website with access to the administration panel to manage the content.</h4>
 
 <h4>Features from the user side:</h4>
@@ -29,14 +34,13 @@
 Built with:
 <strong> MERN stack, SCSS (CSS modules), formik, Recharts, , Figma</strong>
 
-<h4>Thinks that could be added to this project</h4>
+<h4>Functionalities that could be implemented to this project</h4>
 <ul>
   <li>Pagination both in the animal search page and in the administration panel (database tab)b</li>
   <li>Function for editing animal data and articles already existing in the database</li>
   <li>Ability to change administrator account settings (password, email, etc.)</li>
 </ul>
 
-<p style="color: purple">Since the server is hosted by render.com and uses the free instance type, Render will spin down the service after 15 minutes of inactivity and spin the service back up (after 30-60 seconds) whenever it next receives a request to process.</p>
 
 <h2>Screenshots</h2>
 
