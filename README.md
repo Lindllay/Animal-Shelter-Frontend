@@ -35,10 +35,14 @@ Built with:
 <div align="center">
 <h3>Homepage</h3>
 <a href="https://freeimage.host/i/J12DVa9"><img src="https://iili.io/J12DVa9.md.png" alt="J12DVa9.md.png" border="0"></a>
-<h3>Category Page</h3>
-<a href="https://freeimage.host/i/H0tdnVe"><img src="https://iili.io/H0tdnVe.md.png" alt="H0tdnVe.md.png" border="0" ></a><br>
-<h3>Details Page</h3>
-<a href="https://freeimage.host/i/H0t308v"><img src="https://iili.io/H0t308v.md.png" alt="H0t308v.md.png" border="0" ></a><br>
-<h3>Checkout</h3>
-<a href="https://freeimage.host/i/H0tFoiX"><img src="https://iili.io/H0tFoiX.md.png" alt="H0tFoiX.md.png" border="0" ></a>
+<h3>Animal Search Pagee</h3>
+<a href="https://freeimage.host/i/J12DM37"><img src="https://iili.io/J12DM37.md.png" alt="J12DM37.md.png" border="0"></a><br>
+<h3>Login Page</h3>
+<a href="https://freeimage.host/i/J12Dajf"><img src="https://iili.io/J12Dajf.md.png" alt="J12Dajf.md.png" border="0"></a><br>
+<h3>Database Page</h3>
+<a href="https://freeimage.host/i/J12D0Cl"><img src="https://iili.io/J12D0Cl.md.png" alt="J12D0Cl.md.png" border="0"></a><br>
+<h3>Stats Page</h3>
+<a href="https://freeimage.host/i/J12DcQ4"><img src="https://iili.io/J12DcQ4.md.png" alt="J12DcQ4.md.png" border="0"></a><br>
+<h3>Search Bar</h3>
+<a href="https://freeimage.host/i/J12D1G2"><img src="https://iili.io/J12D1G2.md.png" alt="J12D1G2.md.png" border="0"></a><br>
 </div>
