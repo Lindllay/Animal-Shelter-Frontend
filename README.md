@@ -36,7 +36,7 @@ Built with:
   <li>Ability to change administrator account settings (password, email, etc.)</li>
 </ul>
 
-<strong>Since the server is hosted by render.com and uses the free instance type, Render will spin down the service after 15 minutes of inactivity and spin the service back up (after 30-60 seconds) whenever it next receives a request to process.</strong>
+<p style="color: purple">Since the server is hosted by render.com and uses the free instance type, Render will spin down the service after 15 minutes of inactivity and spin the service back up (after 30-60 seconds) whenever it next receives a request to process.</p>
 
 <h2>Screenshots</h2>
 
