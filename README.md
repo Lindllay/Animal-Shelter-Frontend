@@ -25,7 +25,7 @@
 <li>Keep track of logged user, even after refreshing the browser</li>
 </ul>
 
-<h5>The graphic design was designed independently. Layout is optimalized for the app depending on device's screen size</h5>
+<h5>The graphic design was created entirely by me. Layout is optimalized for the app depending on device's screen size</h5>
 
 Built with:
 <strong> MERN stack, SCSS (CSS modules), formik, Recharts, , Figma</strong>
