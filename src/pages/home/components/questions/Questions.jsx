@@ -1,6 +1,6 @@
 import styles from "./_Questions.module.scss";
-import catImage from "../../../../assets/images/cat-questions.webp";
-import questionMark from "../../../../assets/images/question-mark-cat.webp";
+import catImage from "../../../../assets/cat-questions.webp";
+import questionMark from "../../../../assets/question-mark-cat.webp";
 import { useNavigate } from "react-router-dom";
 const Questions = () => {
   const navigate = useNavigate();

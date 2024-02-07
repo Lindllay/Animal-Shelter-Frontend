@@ -1,6 +1,6 @@
 import styles from "./_Search.module.scss";
 import { Input } from "../../form";
-import navCat from "../../../assets/images/catnav.png";
+import navCat from "../../../assets/catnav.webp";
 import { useState, useEffect } from "react";
 import useHttp from "../../../hooks/useHttp";
 import { url } from "../../../utils/config";

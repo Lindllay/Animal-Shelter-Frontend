@@ -1,7 +1,7 @@
 import styles from "./_Help.module.scss";
-import volunteeringImg from "../../assets/images/wolontariat.jpg";
-import walkImg from "../../assets/images/walk.jpg";
-import temporaryHomeImg from "../../assets/images/tymczasowy.jpg";
+import volunteeringImg from "../../assets/wolontariat.jpg";
+import walkImg from "../../assets/walk.jpg";
+import temporaryHomeImg from "../../assets/tymczasowy.jpg";
 import { Fade } from "react-awesome-reveal";
 
 const Help = () => {

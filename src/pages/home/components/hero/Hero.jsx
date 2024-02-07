@@ -1,7 +1,7 @@
 import Form from "./form/Form";
 
-import dogImage from "../../../../assets/images/dog-hero.webp";
-import dogImageBig from "../../../../assets/images/dog-hero-big.webp";
+import dogImage from "../../../../assets/dog-hero.webp";
+import dogImageBig from "../../../../assets/dog-hero-big.webp";
 import styles from "./_Hero.module.scss";
 
 const Hero = (props) => {

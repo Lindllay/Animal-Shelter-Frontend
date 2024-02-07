@@ -1,5 +1,5 @@
 import styles from "./_Form.module.scss";
-import paw from "../../../../../assets/images/paw.webp";
+import paw from "../../../../../assets/paw.webp";
 import {
   RadioBtn,
   RadioContainer,

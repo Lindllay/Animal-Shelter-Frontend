@@ -1,5 +1,5 @@
 import styles from "./_Benefits.module.scss";
-import image from "../../../../assets/images/companion.jpeg";
+import image from "../../../../assets/companion.jpeg";
 
 const Benefits = () => {
   return (
