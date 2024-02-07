@@ -15,7 +15,6 @@ const Animals = (props) => {
 
   const animalsList = data.map((animal, index) => (
     <li className={styles.row} key={animal._id}>
-      {/* <span className={styles.number}>{index + 1}</span> */}
       <div className={styles.main}>
         <picture className={styles.picture}>
           <img

@@ -1,5 +1,4 @@
 const url = "https://animal-shelter-mern.onrender.com/";
-// const url = "http://localhost:5000/";
 
 const em = 16;
 

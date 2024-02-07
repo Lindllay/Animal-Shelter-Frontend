@@ -88,16 +88,6 @@ div.row {
   }
 }
 
-.info {
-  .data {
-    .label {
-    }
-
-    .value {
-    }
-  }
-}
-
 .loading-row {
   color: black;
   padding: 1.8rem;
@@ -120,10 +110,6 @@ div.row {
 }
 
 @include respond(sm) {
-  .list {
-    // max-width: 35rem;
-    // margin: 0 auto;
-  }
   .row {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(8, 1fr);

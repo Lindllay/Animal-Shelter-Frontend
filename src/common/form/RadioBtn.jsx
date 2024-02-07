@@ -5,10 +5,6 @@ const RadioBtn = (props) => {
     props.className ? props.className : ""
   } `;
 
-  const passSelectedOption = (e) => {
-    props.onClick(e.target.value);
-  };
-
   return (
     <div className={classes}>
       <input

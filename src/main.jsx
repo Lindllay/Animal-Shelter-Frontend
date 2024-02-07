@@ -11,13 +11,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </FiltersContextProvider>
   </AuthContextProvider>
 );
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <React.StrictMode>
-//     <AuthContextProvider>
-//       <FiltersContextProvider>
-//         <App />
-//       </FiltersContextProvider>
-//     </AuthContextProvider>
-//   </React.StrictMode>
-// );

@@ -6,10 +6,13 @@ import { Input, Textarea } from "../../../common/form";
 import { uploadData } from "../../../utils/api";
 
 import LoadingSpinner from "../../../common/UI/LoadingSpinner";
+import useAuth from "../../../hooks/useAuth";
 
 let formDataImage;
 
 const AddArticle = () => {
+  const { role } = useAuth();
+
   const initialValues = {
     title: "",
     date: Date.now(),
@@ -97,7 +100,13 @@ const AddArticle = () => {
           />
         </div>
 
-        <button type="submit" className={styles.btn}>
+        <button
+          type="submit"
+          className={`${styles.btn} ${
+            role !== "admin" ? styles["btn-disabled"] : ""
+          }`}
+          disabled={role !== "admin"}
+        >
           {isLoading && <LoadingSpinner />}
           {isLoading ? "Wysyłanie..." : "Dodaj"}
         </button>

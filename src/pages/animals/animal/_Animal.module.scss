@@ -115,10 +115,6 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 0rem;
     justify-items: center;
-
-    // & > *:last-child {
-    //   grid-column: 1 / span 2;
-    // }
   }
   .description {
     grid-column: 1 / span 4;

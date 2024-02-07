@@ -6,10 +6,6 @@ const Input = React.forwardRef((props, ref) => {
     props.className ? props.className : ""
   } ${props.error && props.touched ? styles.error : ""} `;
 
-  const autoGrow = function (e) {
-    e.style.height = "300px";
-  };
-
   useEffect(() => {
     const textarea = document.getElementById(props.id);
 
