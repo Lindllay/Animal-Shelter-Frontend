@@ -36,7 +36,7 @@ Built with:
 
 <h4>Functionalities that could be implemented to this project</h4>
 <ul>
-  <li>Pagination both in the animal search page and in the administration panel (database tab)b</li>
+  <li>Pagination both in the animal search page and in the administration panel (database tab)</li>
   <li>Function for editing animal data and articles already existing in the database</li>
   <li>Ability to change administrator account settings (password, email, etc.)</li>
 </ul>
