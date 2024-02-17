@@ -1,13 +1,25 @@
 .select {
-	width: 100%;
-	padding: 1.2rem;
+  width: 100%;
+  padding: 1.2rem;
 
-	border-radius: 25rem;
-	border: none;
-	border: 0.5px solid var(--color-brown-200);
+  border-radius: 25rem;
+  border: none;
+  border: 0.5px solid var(--color-brown-200);
 
-	color: var(--color-brown-400);
+  color: var(--color-brown-400);
 
-	font-size: 1.4rem;
-	letter-spacing: 1.5px;
+  font-size: 1.4rem;
+  letter-spacing: 1.5px;
+
+  appearance: none;
+  background: url(../../assets/arrow-down.svg);
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

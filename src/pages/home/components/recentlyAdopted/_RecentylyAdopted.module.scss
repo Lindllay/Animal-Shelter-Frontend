@@ -6,6 +6,8 @@
   padding-block: 15rem;
   padding-inline: var(--padding-page-inline);
   overflow: hidden;
+  max-width: 140rem;
+  margin: 0 auto;
 }
 
 .wrapper::before {
