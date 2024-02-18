@@ -12,14 +12,14 @@
   letter-spacing: 1.5px;
 
   appearance: none;
-  background: url(../../assets/arrow-down.svg);
+  background: url(../../assets/arrow-down.svg), #ffffff;
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: calc(100% - 1rem) center;
 }
 
-.arrow {
+.arrow-icon {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
 }
